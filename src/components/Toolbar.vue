@@ -5,6 +5,9 @@
       @click="open">
       <svg viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path></svg>
     </button>
+    <div class="page-title">
+      <h1>{{ pageName }}</h1>
+    </div>
   </div>
 </template>
 
@@ -13,6 +16,18 @@ import { EventBus } from '../js/event-bus.js'
 
 export default {
   name: 'Toolbar',
+  data () {
+    return {
+    }
+  },
+  mounted () {
+
+  },
+  computed: {
+    pageName () {
+      return this.$route.name
+    }
+  },
   methods: {
     open (e) {
       e.stopPropagation()
@@ -53,5 +68,11 @@ export default {
     @include respond-to($tablet-portrait) {
       display: block;
     }
+  }
+
+  .page-title h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 0 0 1rem;
   }
 </style>

@@ -1,12 +1,50 @@
 <template>
   <div id="app">
-    <router-view/>
+    <div 
+      class="container"
+      @click="toggleShow">
+
+      <sidebar 
+        slot="sidebar"
+        ref="sidebar">
+      </sidebar>
+        
+      <div class="layout">
+        <div slot="header" class="header">
+          <toolbar></toolbar>
+        </div>
+
+        <div slot="body" class="body">
+          <router-view/>
+        </div>
+      </div>  
+      
+    </div>
   </div>
 </template>
 
 <script>
+import Toolbar from '@/components/Toolbar'
+import Sidebar from '@/components/Sidebar'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    Toolbar,
+    Sidebar
+  },
+  data () {
+    return {
+
+    }
+  },
+  methods: {
+    toggleShow () {
+      if (this.$refs.sidebar.isShowing) {
+        this.$refs.sidebar.toggleShow()
+      }
+    }
+  }
 }
 </script>
 
@@ -23,6 +61,7 @@ export default {
   }
 
   html {
+    font-family: Roboto Draft,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size: 16px;
   }
 
@@ -31,7 +70,7 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
+    color: rgba(0, 0, 0, .87);
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -42,10 +81,40 @@ export default {
     height: 100%;
   }
 
+  .layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .container {
+    padding-top: 65px;
+    height: 100%;
+    @include respond-to($tablet-landscape) {
+      padding-left: $sidebar-width;
+    } 
+    @include respond-to($large-desktop) {
+      padding-left: $sidebar-width;
+    }
+  }
+
   svg {
     top: auto;
     width: 1.5rem;
     height: 1.5rem;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
   }
 
   .cursor {
