@@ -29,7 +29,7 @@
 
 <script>
 import { EventBus } from '@/js/event-bus.js'
-import MenuList from '@/components/MenuList'
+import MenuList from '@/components/sidebar/sidebar-list'
 
 export default {
   name: 'Sidebar',

@@ -4,10 +4,7 @@
       class="container"
       @click="toggleShow">
 
-      <sidebar 
-        slot="sidebar"
-        ref="sidebar">
-      </sidebar>
+      <sidebar ref="sidebar"></sidebar>
         
       <div class="layout">
         <div slot="header" class="header">
@@ -102,6 +99,10 @@ export default {
     }
   }
 
+  .layout .body .main {
+
+  }
+  
   svg {
     top: auto;
     width: 1.5rem;
