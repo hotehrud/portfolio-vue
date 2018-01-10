@@ -1,4 +1,4 @@
-# portfolio
+# portfolio-vue
 
 > A Vue.js project
 

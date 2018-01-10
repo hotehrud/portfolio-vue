@@ -1,13 +1,7 @@
 <template>
-  <div class="profile-bio">
-    <div class="card-header">
-      <h3>
-        {{ title }}
-        <img :src="imageURL"/>
-      </h3>
-    </div>
+  <div class="profile-base">
     <div class="card-body">
-      <p>{{ text }}</p>
+      <p>{{ name }}</p>
     </div>
   </div>
 </template>
@@ -20,14 +14,17 @@ export default {
     }
   },
   props: {
-      image: {
+      name: {
           type: String
       },
-      title: {
+      position: {
           type: String
       },
-      text: {
+      picture: {
           type: String
+      },
+      sns: {
+          type: Array
       }
   },
   computed: {

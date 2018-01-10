@@ -107,8 +107,9 @@ export default {
 
   .logo .logo-img {
     background: url(../assets/img/logo.png);
-    width: 256px;
+    width: $sidebar-width;
     height: 57px;
+    padding: .3125rem 0;
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 100%;
@@ -172,7 +173,7 @@ export default {
     height: 1rem;
     margin-left: 0.25rem;
     color: #546e7a;
-    background: url(../assets/img/logo.png);
+    background: url(../assets/img/vue-logo.svg);
     background-size: 100% 100%;
   }
 </style>
