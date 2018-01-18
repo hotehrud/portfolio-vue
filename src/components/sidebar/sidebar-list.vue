@@ -37,7 +37,7 @@
 
 <script>
 export default {
-  name: 'MenuList',
+  name: 'menuList',
   components: {
   },
   data () {
@@ -56,35 +56,40 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   .drawer-list {
-    margin-top: 20px;
-  }
-
-  .drawer-list ul li {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 40px;
-  }
-
-  .drawer-list ul li a {
-    display: block;
-    padding: 0 2rem;
-    font-weight: 400;
-    color: #546e7a;
-    line-height: 40px;
-    text-decoration: none;
-    -webkit-transition: color .2s ease-in-out;
-    transition: color .2s ease-in-out;
-  }
-
-  .drawer-list ul li svg {
-    position: relative;
-    bottom: 1px;
-    vertical-align: middle;
-    width: 1rem;
-    height: 1rem;
-    margin-right: 10px;
-    fill: #546e7a;
+    margin-top: 1.5rem;
+    ul li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      height: 40px;
+      svg {
+        position: relative;
+        bottom: 1px;
+        width: 1rem;
+        height: 1rem;
+        margin-right: 10px;
+        fill: #546e7a;
+      }
+      a {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 0 2rem;
+        font-weight: 400;
+        color: #546e7a;
+        // line-height: 40px;
+        text-decoration: none;
+        -webkit-transition: color .2s ease-in-out;
+        transition: color .2s ease-in-out;
+        span {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
   }
 
   .drawer-list ul li a.router-link-exact-active {

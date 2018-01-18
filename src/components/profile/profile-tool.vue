@@ -1,9 +1,9 @@
 <template>
-  <div class="profile-bio">
+  <div class="profile-tool">
     <div class="card-header">
       <h3>
-        {{ title }}
         <img :src="imageURL"/>
+        {{ title }}
       </h3>
     </div>
     <div class="card-body">
@@ -14,21 +14,21 @@
 
 <script>
 export default {
-  name: 'profile-bio',
+  name: 'profile-tool',
   data () {
     return {
     }
   },
   props: {
-      image: {
-          type: String
-      },
-      title: {
-          type: String
-      },
-      text: {
-          type: String
-      }
+    image: {
+      type: String
+    },
+    title: {
+      type: String
+    },
+    text: {
+      type: String
+    }
   },
   computed: {
     imageURL () {
@@ -39,6 +39,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
+<style lang="scss" scoped>
+  
 </style>

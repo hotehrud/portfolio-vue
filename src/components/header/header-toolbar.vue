@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import { EventBus } from '../js/event-bus.js'
+import { EventBus } from '@/js/event-bus.js'
 
 export default {
-  name: 'Toolbar',
+  name: 'toolbar',
   data () {
     return {
     }
@@ -43,6 +43,8 @@ export default {
     top: 0;
     display: flex;
     flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     width: calc(100% - #{ $sidebar-width });
     min-height: 65px;

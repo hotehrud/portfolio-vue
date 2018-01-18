@@ -4,38 +4,33 @@
       <div class="row-1">
         <profile-base
           class="card" 
-          :name="profileitems.name"
-          :position="profileitems.position"
-          :picture="profileitems.picture"
-          :sns="profileitems.sns">
-        </profile-base>
-        <profile-bio 
+          :name="baseItems.name"
+          :company="baseItems.company"
+          :picture="baseItems.picture"
+          :sns="baseItems.sns"/>
+        <profile-skill 
           class="card" 
-          :image="bioitems.image"
-          :title="bioitems.title"
-          :text="bioitems.text">
-        </profile-bio>
+          :image="skillItems.image"
+          :title="skillItems.title"
+          :lang="skillItems.lang"/>
       </div>
       <div class="row-2">
         <profile-bio 
           class="card" 
-          :image="bioitems.image"
-          :title="bioitems.title"
-          :text="bioitems.text">
-        </profile-bio>
+          :image="bioItems.image"
+          :title="bioItems.title"
+          :text="bioItems.text"/>
         <div class="row">
-          <profile-bio 
+          <profile-info 
             class="row-3 card"
-            :image="bioitems.image"
-            :title="bioitems.title"
-            :text="bioitems.text">
-          </profile-bio>
-          <profile-bio 
+            :image="infoItems.image"
+            :title="infoItems.title"
+            :text="infoItems.text"/>
+          <profile-tool 
             class="row-4 card"
-            :image="bioitems.image"
-            :title="bioitems.title"
-            :text="bioitems.text">
-          </profile-bio>
+            :image="toolItems.image"
+            :title="toolItems.title"
+            :text="toolItems.text"/>
         </div>
       </div>
     </div>
@@ -43,32 +38,85 @@
 </template>
 
 <script>
-import profileBase from '@/components/profile//profile-base'
-import profileBio from '@/components/profile//profile-bio'
+import profileBase from '@/components/profile/profile-base'
+import profileSkill from '@/components/profile/profile-skill'
+import profileBio from '@/components/profile//profile-biography'
+import profileInfo from '@/components/profile/profile-information'
+import profileTool from '@/components/profile/profile-tool'
+
 export default {
   name: 'Profile',
   components: {
     profileBase,
-    profileBio
+    profileSkill,
+    profileBio,
+    profileInfo,
+    profileTool
   },
   data () {
     return {
-      profileitems: {
+      baseItems: {
         name: 'Lee Jung Hyun',
-        position: 'Web developer',
+        company: 'Software Developer at Vtouch',
         picture: 'me.jpeg',
-        sns: ['github', 'codepen', 'tistory']
+        sns: [
+          {
+            name: 'Tistory',
+            image: 'tistory.svg',
+            link: 'https://mygumi.tistory.com/'
+          },
+          {
+            name: 'Github',
+            image: 'github.svg',
+            link: 'https://github.com/hotehrud/'
+          },
+          {
+            name: 'Codepen',
+            image: 'codepen.svg',
+            link: 'https://codepen.io/mygumi/'
+          },
+          {
+            name: 'Baekjoon',
+            image: 'baekjoon.svg',
+            link: 'https://acmicpc.net/user/hotehrud'
+          }
+        ]
       },
-      progressbars: '',
-      bioitems: {
+      skillItems: {
+        title: 'Skills',
+        image: 'plus-one.svg',
+        lang: [
+          {
+            name: 'HTML/CSS',
+            value: 100
+          },
+          {
+            name: 'JS(ES6/Vue/Node.js)',
+            value: 100
+          },
+          {
+            name: 'JAVA',
+            value: 70
+          },
+          {
+            name: 'PHP',
+            value: 50
+          }
+        ]
+      },
+      bioItems: {
         title: 'Profile',
         image: 'profile.svg',
         text: 'abc'
       },
-      informationitems: '',
-      contactitems: '',
-      socialicons: '',
-      toolitems: ''
+      infoItems: {
+        title: 'Information',
+        image: 'info.svg'
+      },
+      toolItems: {
+        title: 'Toolbox',
+        image: 'wrench.svg'
+      }
     }
   },
   methods: {
@@ -79,65 +127,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  .main .row {
-    @include respond-to($tablet-landscape) {
-      display: -webkit-flex;
-      -webkit-flex-wrap: wrap;
-      display: flex;   
-      flex-wrap: wrap;
-    } 
-    @include respond-to($large-desktop) {
-      display: -webkit-flex;
-      -webkit-flex-wrap: wrap;
-      display: flex;   
-      flex-wrap: wrap;
-    }
-  }
-
-  .main .row > div {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .main .row .card {
-    background-color: #fff;
-  }
-
-  .main .row .row-1 {
-    @include respond-to($tablet-landscape) {
-      flex: 0 0 33.33333333%;
-    } 
-    @include respond-to($large-desktop) {
-      flex: 0 0 33.33333333%;
-    }
-  }
-
-  .main .row .row-2 {
-    @include respond-to($tablet-landscape) {
-      flex: 0 0 66.66666666%;
-    } 
-    @include respond-to($large-desktop) {
-      flex: 0 0 66.66666666%;
-    }
-  }
-
-  .main .row .row-3 {
-    @include respond-to($tablet-landscape) {
-      margin-right: 4%;
-      flex: 0 0 48%;
-    } 
-    @include respond-to($large-desktop) {
-      margin-right: 4%;
-      flex: 0 0 48%;
-    }
-  }
-
-  .main .row .row-4 {
-    @include respond-to($tablet-landscape) {
-      flex: 0 0 48%;
-    } 
-    @include respond-to($large-desktop) {
-      flex: 0 0 48%;
-    }
-  }
+  @import "../sass/card.scss";
 </style>

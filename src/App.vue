@@ -12,7 +12,11 @@
         </div>
 
         <div slot="body" class="body">
-          <router-view/>
+          <transition appear
+            name="slide-fade"
+            mode="out-in">>
+            <router-view/>
+          </transition>
         </div>
       </div>  
       
@@ -21,14 +25,14 @@
 </template>
 
 <script>
-import Toolbar from '@/components/Toolbar'
-import Sidebar from '@/components/Sidebar'
+import toolbar from '@/components/header/header-toolbar'
+import sidebar from '@/components/sidebar/sidebar'
 
 export default {
   name: 'app',
   components: {
-    Toolbar,
-    Sidebar
+    toolbar,
+    sidebar
   },
   data () {
     return {
@@ -79,6 +83,8 @@ export default {
   }
 
   .layout {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -86,6 +92,16 @@ export default {
 
   .header {
     width: 100%;
+  }
+
+  .body {
+    padding: 1rem;
+    @include respond-to($tablet-landscape) {
+      padding: 2rem 1rem;
+    } 
+    @include respond-to($large-desktop) {
+      padding: 2rem 1rem;
+    }
   }
 
   .container {
@@ -99,10 +115,33 @@ export default {
     }
   }
 
-  .layout .body .main {
-
+  .layout .body .main .row .card {
+    .card-header {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      height: 48px;
+      padding-left: 1rem;
+      border-bottom: 1px solid rgba(0, 0, 0, .12);
+      h3 {
+        margin: 0;
+        display: flex;
+        img, svg {
+          margin-right: 0.5rem;
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+    .card-body {
+      padding: 1rem;
+    }
+    
   }
-  
+
   svg {
     top: auto;
     width: 1.5rem;
@@ -120,5 +159,21 @@ export default {
 
   .cursor {
     cursor: pointer;
+  }
+
+  .slide-fade-enter-active {
+    transition: all .5s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .slide-fade-enter, .slide-fade-leave-active {
+    opacity: 0;
+    @include respond-to($tablet-landscape) {
+      transform: scale(0);
+    } 
+    @include respond-to($large-desktop) {
+      transform: scale(0);
+    }
   }
 </style>

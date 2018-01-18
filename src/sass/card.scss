@@ -1,0 +1,75 @@
+.container .layout .body .main .row {
+  @include respond-to($tablet-landscape) {
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    display: flex;   
+    flex-wrap: wrap;
+  } 
+  @include respond-to($large-desktop) {
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    display: flex;   
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  > div {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .card {
+    background-color: #fff;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.21);
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.21);
+    margin-bottom: 1rem;
+  }
+  .row-1 {
+    @include respond-to($tablet-landscape) {
+      flex: 0 0 33.33333333%;
+    } 
+    @include respond-to($large-desktop) {
+      flex: 0 0 33.33333333%;
+    }
+  }
+  .row-2 {
+    @include respond-to($tablet-landscape) {
+      flex: 0 0 66.66666666%;
+    } 
+    @include respond-to($large-desktop) {
+      flex: 0 0 66.66666666%;
+    }
+  }
+  .row-3 {
+    padding-left: 0rem;
+    padding-right: 0rem;
+    @include respond-to($tablet-landscape) {
+      flex: 0 0 48%;
+    } 
+    @include respond-to($large-desktop) {
+      flex: 0 0 48%;
+    }
+  }
+  .row-4 {
+    padding-left: 0rem;
+    padding-right: 0rem;
+    @include respond-to($tablet-landscape) {
+      flex: 0 0 48%;
+    } 
+    @include respond-to($large-desktop) {
+      flex: 0 0 48%;
+    }
+  }
+
+  .row-5 {
+    @include respond-to($tablet-landscape) {
+      flex: 0 0 40%;
+      margin: 0 1rem 2rem 1rem;
+    } 
+    @include respond-to($large-desktop) {
+      flex: 0 0 40%;
+      margin: 0 1rem 2rem 1rem;
+    }
+  }
+}
