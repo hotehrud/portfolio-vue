@@ -56,7 +56,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   .profile-base .profile {
-    
     @include respond-to($tablet-landscape) {
       padding: 2rem;
     } 
@@ -86,7 +85,8 @@ export default {
       color: rgba(0,0,0,.54);
     }
     .icon-group {
-      margin-top: 1rem;
+      position: relative;
+      margin-top: 2.5rem;
     }
     ul {
       display: -webkit-box;

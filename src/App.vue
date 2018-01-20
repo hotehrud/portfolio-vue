@@ -176,4 +176,14 @@ export default {
       transform: scale(0);
     }
   }
+  
+  .c-link--tistory:hover  { color: #ed5306 }
+  .c-link--github:hover   { color: #25292f }
+  .c-link--codepen:hover    { color: #000000 }
+  .c-link--baekjoon:hover { color: #0078c2 }
+
+  .c-link--tistory:hover::after  { background: #ed5306 }
+  .c-link--github:hover::after   { background: #25292f }
+  .c-link--codepen:hover::after    { background: #000000 }
+  .c-link--baekjoon:hover::after { background: #0078c2 }
 </style>

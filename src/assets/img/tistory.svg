@@ -4,11 +4,22 @@
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="300.000000pt" height="300.000000pt" viewBox="0 0 300.000000 300.000000"
  preserveAspectRatio="xMidYMid meet">
+  <style>
+    /* <![CDATA[ */
+    svg {
+      fill: #bbb;
+      height: 40px;
+    }
+
+    svg:hover {
+      fill: #ed5306;
+    }
+    /* ]]> */
+  </style>
 <metadata>
 Created by potrace 1.15, written by Peter Selinger 2001-2017
 </metadata>
-<g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
+<g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)" stroke="none">
 <path d="M1275 2694 c-497 -99 -875 -481 -970 -979 -20 -105 -19 -314 1 -424
 94 -514 501 -908 1017 -985 135 -20 226 -20 347 -1 277 45 488 152 681 344
 192 193 299 404 344 681 19 121 19 212 -1 347 -77 517 -470 923 -985 1017
