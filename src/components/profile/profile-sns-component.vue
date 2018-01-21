@@ -89,6 +89,7 @@ export default {
       opacity: 0;
       -webkit-transition: .2s;
       transition: .2s;
+      pointer-events: none;
     }
     .sns-icon:hover::before,
     .sns-icon:hover::after {
