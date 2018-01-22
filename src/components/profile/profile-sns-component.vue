@@ -1,7 +1,8 @@
 <template>
   <li>
-    <a class="sns-icon" :class="className" :href="link" :title="name" :aria-label="tooltipName">
-      <object :data="imageURL" type="image/svg+xml"/>
+    <a class="sns-link" :class="className" :href="link" :title="name" :aria-label="tooltipName">
+      <component class="sns-icon" :is="iconSVG">
+      </component>
     </a>
   </li>
 </template>
@@ -11,6 +12,7 @@ export default {
   name: 'sns-group',
   data () {
     return {
+      
     }
   },
   props: {
@@ -33,6 +35,9 @@ export default {
     },
     className () {
       return 'c-link--' + this.name.toLowerCase()
+    },
+    iconSVG () {
+      return require('@/components/svg/svg-' + this.name + '.vue').default
     }
   }
 }
@@ -52,7 +57,7 @@ export default {
     align-items: center;
     height: 40px;
     width: 40px;
-    .sns-icon {
+    .sns-link {
       position: relative;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -60,18 +65,19 @@ export default {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
-      object {
-        width: 24px;
-        height: 24px;
+      // fill: currentColor;
+      color: #bbb;
+      .sns-icon {
+        fill: currentColor;
       }
     }
-    .sns-icon::before {
+    .sns-link::before {
       content: '';
       bottom: calc(100% - 7px);
       border: solid 5px transparent;
       border-top-color: currentColor;
     }
-    .sns-icon::after {
+    .sns-link::after {
       content: attr(aria-label);
       bottom: calc(100% + 3px);
       padding: .61em .93em;
@@ -79,8 +85,8 @@ export default {
       color: white;
       border-radius: 3px;
     }
-    .sns-icon::before, 
-    .sns-icon::after {
+    .sns-link::before, 
+    .sns-link::after {
       display: block;
       position: absolute;
       left: 50%;
@@ -91,8 +97,8 @@ export default {
       transition: .2s;
       pointer-events: none;
     }
-    .sns-icon:hover::before,
-    .sns-icon:hover::after {
+    .sns-link:hover::before,
+    .sns-link:hover::after {
       opacity: 1;
       transform: translate(-50%);
     }

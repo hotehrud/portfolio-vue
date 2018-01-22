@@ -61,22 +61,22 @@ export default {
         picture: 'me.jpeg',
         sns: [
           {
-            name: 'Tistory',
+            name: 'tistory',
             image: 'tistory.svg',
             link: 'https://mygumi.tistory.com/'
           },
           {
-            name: 'Github',
+            name: 'github',
             image: 'github.svg',
             link: 'https://github.com/hotehrud/'
           },
           {
-            name: 'Codepen',
+            name: 'codepen',
             image: 'codepen.svg',
             link: 'https://codepen.io/mygumi/'
           },
           {
-            name: 'Baekjoon',
+            name: 'baekjoon',
             image: 'baekjoon.svg',
             link: 'https://acmicpc.net/user/hotehrud'
           }

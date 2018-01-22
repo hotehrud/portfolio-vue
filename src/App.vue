@@ -157,6 +157,10 @@ export default {
     list-style-type: none;
   }
 
+  a {
+    color: inherit;
+  }
+
   .cursor {
     cursor: pointer;
   }
@@ -177,10 +181,10 @@ export default {
     }
   }
   
-  .c-link--tistory:hover  { color: #ed5306 }
-  .c-link--github:hover   { color: #25292f }
-  .c-link--codepen:hover    { color: #000000 }
-  .c-link--baekjoon:hover { color: #0078c2 }
+  .c-link--tistory:hover  { color: #ed5306 !important }
+  .c-link--github:hover   { color: #25292f !important }
+  .c-link--codepen:hover    { color: #000000 !important }
+  .c-link--baekjoon:hover { color: #0078c2 !important }
 
   .c-link--tistory:hover::after  { background: #ed5306 }
   .c-link--github:hover::after   { background: #25292f }

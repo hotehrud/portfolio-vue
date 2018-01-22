@@ -1,0 +1,33 @@
+<template>
+  <svg viewBox="0 0 180.000000 180.000000"
+  preserveAspectRatio="xMidYMid meet">
+    <metadata>
+    Created by potrace 1.15, written by Peter Selinger 2001-2017
+    </metadata>
+    <g transform="translate(0.000000,180.000000) scale(0.100000,-0.100000)" stroke="none">
+    <path d="M410 1426 c0 -2 -63 -239 -140 -526 -77 -288 -140 -527 -140 -531 0
+    -5 18 -9 39 -9 39 0 40 1 55 53 40 140 266 995 266 1005 0 7 -16 12 -40 12
+    -22 0 -40 -2 -40 -4z"/>
+    <path d="M722 1113 l-200 -208 201 -207 200 -208 53 0 c30 0 54 3 54 8 0 4
+    -43 50 -96 102 -52 52 -141 143 -196 202 l-100 108 191 196 c105 108 191 200
+    191 205 0 5 -22 9 -49 9 l-49 0 -200 -207z"/>
+    <path d="M1180 1314 c0 -3 88 -96 195 -206 l194 -201 -200 -206 -201 -206 53
+    -3 53 -3 203 203 c112 112 202 209 201 215 -2 7 -93 103 -202 213 l-200 200
+    -48 0 c-26 0 -48 -3 -48 -6z"/>
+    </g>
+  </svg>
+</template>
+
+<script>
+  export default {
+    name: 'svg-baekjoon',
+    data () {
+      return {
+      }
+    }
+  }
+</script>
+
+<style scoped>
+  
+</style>
