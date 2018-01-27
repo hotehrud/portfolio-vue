@@ -93,11 +93,11 @@ export default {
   }
 
   .drawer-list ul li a.router-link-exact-active {
-    color: #b0bec5;
+    color: #fff;
     font-weight: 500;
   }
 
   .drawer-list ul li a.router-link-exact-active svg {
-    fill: #b0bec5;
+    fill: #fff;
   }
 </style>

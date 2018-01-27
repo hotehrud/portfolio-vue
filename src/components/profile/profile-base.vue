@@ -2,7 +2,7 @@
   <div class="profile-base">
     <div class="card-body">
       <div class="profile">
-        <img class="profile-pictuce" :src="pictureURL"/>
+        <img class="profile-pictuce" :src="meImage"/>
         <h4 class="profile-name">{{ name }}</h4>
         <h6 class="profile-company">{{ company }}</h6>
         <div class="icon-group">
@@ -21,6 +21,7 @@
 
 <script>
 import snsGroup from '@/components/profile/profile-sns-component'
+import me from '@/assets/img/me.jpeg'
 
 export default {
   name: 'profile-bio',
@@ -29,6 +30,7 @@ export default {
   },
   data () {
     return {
+      meImage: me
     }
   },
   props: {
@@ -43,11 +45,6 @@ export default {
     },
     sns: {
       type: Array
-    }
-  },
-  computed: {
-    pictureURL () {
-      return require('@/assets/img/' + this.picture)
     }
   }
 }
@@ -65,11 +62,8 @@ export default {
     .profile-pictuce {
       width: 125px;
       height: 125px;
-      background: url(../../assets/img/me.jpeg);
-      background-size: 100% 100%;
       border-radius: 50%;
       border: 2px solid #ddd;
-      // filter: grayscale(100%);
     }
     .profile-name {
       margin: .625rem 0 0;

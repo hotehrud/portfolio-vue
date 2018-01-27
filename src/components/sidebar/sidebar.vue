@@ -4,12 +4,10 @@
     v-bind:class="{'sidebar-open': isShowing}"
     @click="propagationPrevent">
     <div class="logo">
-      <a href="/">
-        <div class="logo-img"></div>
-      </a>
+      <img class="logo-img" :src="logoImage"/>
     </div>
     <div class="profile-picture">
-      <div class="profile-img"></div>
+      <img class="profile-img" :src="meImage"/>
       <p class="profile-name">Lee Jung Hyun</p>
       <p class="profile-position">Web developer</p>  
     </div>
@@ -30,6 +28,8 @@
 <script>
 import { EventBus } from '@/js/event-bus.js'
 import menuList from '@/components/sidebar/sidebar-list'
+import logo from '@/assets/img/logo.png'
+import me from '@/assets/img/me.jpeg'
 
 export default {
   name: 'Sidebar',
@@ -38,7 +38,9 @@ export default {
   },
   data () {
     return {
-      show: false
+      show: false,
+      meImage: me,
+      logoImage: logo
     }
   },
   mounted () {
@@ -94,17 +96,13 @@ export default {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
-      height: 65px;
+      height: 64px;
       -webkit-box-shadow: 0 2px 5px rgba(0,0,0,.26);
       box-shadow: 0 2px 5px rgba(0,0,0,.26);
       .logo-img {
-        background: url(../../assets/img/logo.png);
-        width: $sidebar-width;
-        height: 57px;
+        width: 64px;
+        height: 64px;
         padding: .3125rem 0;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: auto 100%;
       }
     }
     .profile-picture {
@@ -116,15 +114,12 @@ export default {
         width: 100px;
         height: 100px;
         margin: 1px auto 8px;
-        // filter: grayscale(100%);
-        background: url(../../assets/img/me.jpeg);
-        background-size: 100% 100%;
         border-radius: 50%;
       }
       p {
         margin: 0;
         text-align: center;
-        color: #b0bec5;
+        color: #fff;
       }
       .profile-name {
         font-size: 1.25rem;

@@ -96,7 +96,7 @@ export default {
           },
           {
             name: 'JAVA',
-            value: 70
+            value: 75
           },
           {
             name: 'PHP',

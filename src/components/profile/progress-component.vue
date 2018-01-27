@@ -1,6 +1,6 @@
 <template>
   <div>
-    <slot></slot>
+    <slot :text="className"></slot>
     <progress :value="value" max="100"/>
   </div>
 </template>
@@ -30,6 +30,9 @@ export default {
   computed: {
     percent () {
       return this.target + '%'
+    },
+    className () {
+      return 'level-' + this.target
     }
   },
   watch: {

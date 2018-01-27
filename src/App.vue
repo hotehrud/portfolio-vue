@@ -71,7 +71,7 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: rgba(0, 0, 0, .87);
+    color: #273238;
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -117,6 +117,7 @@ export default {
 
   .layout .body .main .row .card {
     .card-header {
+      position: relative;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -159,6 +160,10 @@ export default {
 
   a {
     color: inherit;
+  }
+
+  .transition {
+    position: static !important;
   }
 
   .cursor {

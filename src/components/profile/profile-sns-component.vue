@@ -1,7 +1,7 @@
 <template>
   <li>
-    <a class="sns-link" :class="className" :href="link" :title="name" :aria-label="tooltipName">
-      <component class="sns-icon" :is="iconSVG">
+    <a class="c-link" :class="className" :href="link" :title="name" :aria-label="tooltipName">
+      <component class="c-icon" :is="iconSVG">
       </component>
     </a>
   </li>
@@ -12,7 +12,6 @@ export default {
   name: 'sns-group',
   data () {
     return {
-      
     }
   },
   props: {
@@ -31,7 +30,7 @@ export default {
       return require('@/assets/img/' + this.image)
     },
     tooltipName () {
-      return this.name
+      return this.name.charAt(0).toUpperCase() + this.name.slice(1)
     },
     className () {
       return 'c-link--' + this.name.toLowerCase()
@@ -57,7 +56,7 @@ export default {
     align-items: center;
     height: 40px;
     width: 40px;
-    .sns-link {
+    .c-link {
       position: relative;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -65,19 +64,19 @@ export default {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
-      // fill: currentColor;
       color: #bbb;
-      .sns-icon {
+      .c-icon {
         fill: currentColor;
+        transition: .2s;
       }
     }
-    .sns-link::before {
+    .c-link::before {
       content: '';
       bottom: calc(100% - 7px);
       border: solid 5px transparent;
       border-top-color: currentColor;
     }
-    .sns-link::after {
+    .c-link::after {
       content: attr(aria-label);
       bottom: calc(100% + 3px);
       padding: .61em .93em;
@@ -85,22 +84,19 @@ export default {
       color: white;
       border-radius: 3px;
     }
-    .sns-link::before, 
-    .sns-link::after {
-      display: block;
+    .c-link::before, 
+    .c-link::after {
       position: absolute;
       left: 50%;
-      -webkit-transform: translate(-50%, -10px);
-      transform: translate(-50%, -10px);
+      -webkit-transform: translate(-50%, -5px);
+      transform: translate(-50%, -5px);
       opacity: 0;
       -webkit-transition: .2s;
       transition: .2s;
-      pointer-events: none;
     }
-    .sns-link:hover::before,
-    .sns-link:hover::after {
+    .c-link:hover::before,
+    .c-link:hover::after {
       opacity: 1;
-      transform: translate(-50%);
     }
   }
 </style>
