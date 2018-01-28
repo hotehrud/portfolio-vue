@@ -84,9 +84,14 @@ export default {
 
   .layout {
     display: -webkit-box;
+    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    flex-direction: column;
+    -webkit-flex-direction: column;
+	  -moz-flex-direction: column;
+	  -ms-flex-direction: column;	
+	  flex-direction: column;
     width: 100%;
   }
 
@@ -119,9 +124,13 @@ export default {
     .card-header {
       position: relative;
       display: -webkit-box;
+      display: -moz-box;
       display: -ms-flexbox;
+      display: -webkit-flex;
       display: flex;
       -webkit-box-align: center;
+      -moz-box-align: center;
+      -webkit-align-items: center;
       -ms-flex-align: center;
       align-items: center;
       height: 48px;
@@ -129,6 +138,10 @@ export default {
       border-bottom: 1px solid rgba(0, 0, 0, .12);
       h3 {
         margin: 0;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
         display: flex;
         img, svg {
           margin-right: 0.5rem;
@@ -179,10 +192,10 @@ export default {
   .slide-fade-enter, .slide-fade-leave-active {
     opacity: 0;
     @include respond-to($tablet-landscape) {
-      transform: scale(0);
+      // transform: scale(0);
     } 
     @include respond-to($large-desktop) {
-      transform: scale(0);
+      // transform: scale(0);
     }
   }
   

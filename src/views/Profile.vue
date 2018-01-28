@@ -25,7 +25,7 @@
             class="row-3 card"
             :image="infoItems.image"
             :title="infoItems.title"
-            :text="infoItems.text"/>
+            :info="infoItems.info"/>
           <profile-tool 
             class="row-4 card"
             :image="toolItems.image"
@@ -111,7 +111,14 @@ export default {
       },
       infoItems: {
         title: 'Information',
-        image: 'info.svg'
+        image: 'info.svg',
+        info: {
+          name: 'Lee JungHyun',
+          date_of_birth: '1992.11.24',
+          sex: 'male',
+          email: 'hotehrud@naver.com',
+          address: 'Seoul'
+        }
       },
       toolItems: {
         title: 'Toolbox',

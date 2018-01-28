@@ -84,10 +84,14 @@ export default {
     }
     ul {
       display: -webkit-box;
+      display: -moz-box;
       display: -ms-flexbox;
+      display: -webkit-flex;
       display: flex;
       -webkit-box-pack: center;
+      -moz-box-pack: center;
       -ms-flex-pack: center;
+      -webkit-justify-content: center;
       justify-content: center;
     }
   }

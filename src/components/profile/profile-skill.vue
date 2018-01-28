@@ -122,7 +122,6 @@ export default {
 
   .progress-value {
     display: flex;
-    justify-content: space-between;
     font-size: .875rem;
     padding-bottom: .25rem;
     .level-100 {

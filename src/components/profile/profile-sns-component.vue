@@ -46,12 +46,18 @@ export default {
 <style lang="scss" scoped>
   li {
     display: -webkit-box;
+    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     -webkit-box-pack: center;
+    -moz-box-pack: center;
     -ms-flex-pack: center;
+    -webkit-justify-content: center;
     justify-content: center;
     -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
     height: 40px;
@@ -59,9 +65,13 @@ export default {
     .c-link {
       position: relative;
       display: -webkit-box;
+      display: -moz-box;
       display: -ms-flexbox;
+      display: -webkit-flex;
       display: flex;
       -webkit-box-align: center;
+      -moz-box-align: center;
+      -webkit-align-items: center;
       -ms-flex-align: center;
       align-items: center;
       color: #bbb;

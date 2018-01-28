@@ -7,7 +7,10 @@
       </h3>
     </div>
     <div class="card-body">
-      <p>{{ text }}</p>
+      <div class="column" v-for="(value, key, index) in info">
+        <span class="key">{{ propertyInfo(key) }}</span>
+        <span class="value">{{ value }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -26,8 +29,14 @@ export default {
     title: {
       type: String
     },
-    text: {
-      type: String
+    info: {
+      type: Object
+    }
+  },
+  methods: {
+    propertyInfo (key) {
+      let str = key.replace(/_/gi, ' ')
+      return str.charAt(0).toUpperCase() + str.slice(1)
     }
   },
   computed: {
@@ -46,6 +55,28 @@ export default {
     } 
     @include respond-to($large-desktop) {
       margin-right: 4%;
+    }
+    
+    .column {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: justify;
+      -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      margin: 1rem 0 0;
+      border-bottom: 1px groove #000;
+      .key {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      .value {
+        font-size: .8125rem;
+      }
     }
   }
 </style>
