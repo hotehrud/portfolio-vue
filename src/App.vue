@@ -51,7 +51,7 @@ export default {
 
 <style lang="scss">
   @import "./sass/main.scss";
-
+  @import "./sass/card.scss";
   * {
     box-sizing: border-box;
   }
@@ -120,42 +120,6 @@ export default {
     }
   }
 
-  .layout .body .main .row .card {
-    .card-header {
-      position: relative;
-      display: -webkit-box;
-      display: -moz-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-align: center;
-      -moz-box-align: center;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center;
-      height: 48px;
-      padding-left: 1rem;
-      border-bottom: 1px solid rgba(0, 0, 0, .12);
-      h3 {
-        margin: 0;
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        img, svg {
-          margin-right: 0.5rem;
-          width: 1.5rem;
-          height: 1.5rem;
-        }
-      }
-    }
-    .card-body {
-      padding: 1rem;
-    }
-    
-  }
-
   svg {
     top: auto;
     width: 1.5rem;
@@ -165,10 +129,6 @@ export default {
   ul {
     margin: 0;
     padding: 0;
-  }
-
-  li {
-    list-style-type: none;
   }
 
   a {

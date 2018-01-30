@@ -7,7 +7,11 @@
       </h3>
     </div>
     <div class="card-body">
-      <p>{{ text }}</p>
+      <p v-html="text">
+      </p>
+      <li v-for="item in tools">
+      {{ item }}
+      </li>
     </div>
   </div>
 </template>
@@ -17,6 +21,7 @@ export default {
   name: 'profile-tool',
   data () {
     return {
+      text: 'There are many skills other than language.</br>Here I have listed some of them:'
     }
   },
   props: {
@@ -26,7 +31,7 @@ export default {
     title: {
       type: String
     },
-    text: {
+    tools: {
       type: String
     }
   },
@@ -40,5 +45,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  
+  .profile-tool {
+    font-size: .875rem;
+    text-align: left;
+    color: rgba(0, 0, 0, .65);
+    p {
+      margin: 0 0 1rem 0;
+    }
+    li {
+      padding: .21rem 0;
+    }
+  }
 </style>

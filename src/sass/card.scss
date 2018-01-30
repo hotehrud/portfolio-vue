@@ -1,17 +1,21 @@
 .container .layout .body .main .row {
   @include respond-to($tablet-landscape) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: -webkit-flex;
-    -webkit-flex-wrap: wrap;
-    display: flex;   
-    flex-wrap: wrap;
+    display: flex;
   } 
   @include respond-to($large-desktop) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: -webkit-flex;
-    -webkit-flex-wrap: wrap;
-    display: flex;   
-    flex-wrap: wrap;
+    display: flex;
     -webkit-box-pack: center;
+    -moz-box-pack: center;
     -ms-flex-pack: center;
+    -webkit-justify-content: center;
     justify-content: center;
   }
   > div {
@@ -19,11 +23,60 @@
     padding-right: 1rem;
   }
   .card {
+    position: relative;
+    top: 0;
     background-color: #fff;
     border-radius: 2px;
     -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.21);
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.21);
     margin-bottom: 1rem;
+    -webkit-transition: all 1s ease;/* WebKit */
+    -moz-transition: all 1s ease;/* Firefox */
+    -o-transition: all 1s ease;/* Opera */
+    transition: all 1s ease;/* Standard */
+    &:hover {
+      top: -10px;
+      -webkit-border-bottom-left-radius:70px 20px;/* WebKit */
+      -moz-border-bottom-left-radius:70px 20px;/* Firefox */
+      -o-border-bottom-left-radius:70px 20px;/* Opera */
+      border-bottom-left-radius:70px 20px;/* Standard */
+      -webkit-box-shadow: -10px 10px 35px #888;/* WebKit */
+      -moz-box-shadow: -10px 10px 35px #888;/* Firefox */
+      -o-box-shadow: -10px 10px 35px #888;/* Opera */
+       box-shadow: -10px 10px 35px #888;/* Standard */
+    }
+    .card-header {
+      position: relative;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -moz-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      height: 48px;
+      padding-left: 1rem;
+      border-bottom: 1px solid rgba(0, 0, 0, .12);
+      h3 {
+        margin: 0;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        img, svg {
+          margin-right: 0.5rem;
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+    .card-body {
+      padding: 1rem;
+    }
   }
   .row-1 {
     @include respond-to($tablet-landscape) {

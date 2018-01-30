@@ -30,7 +30,7 @@
             class="row-4 card"
             :image="toolItems.image"
             :title="toolItems.title"
-            :text="toolItems.text"/>
+            :tools="toolItems.tool"/>
         </div>
       </div>
     </div>
@@ -91,7 +91,7 @@ export default {
             value: 100
           },
           {
-            name: 'JS(ES6/Vue/Node.js)',
+            name: 'JS(Vue/Node.js)',
             value: 100
           },
           {
@@ -122,7 +122,14 @@ export default {
       },
       toolItems: {
         title: 'Toolbox',
-        image: 'wrench.svg'
+        image: 'wrench.svg',
+        tool: [
+          'git',
+          'webpack',
+          'electron',
+          'redis',
+          'mysql'
+        ]
       }
     }
   },
@@ -134,5 +141,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  @import "../sass/card.scss";
+  
 </style>

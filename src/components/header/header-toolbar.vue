@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
   .toolbar {
-    position: fixed;
+    position: absolute;
     top: 0;
     display: flex;
     flex-direction: row;

@@ -62,6 +62,7 @@ export default {
     align-items: center;
     height: 40px;
     width: 40px;
+    list-style-type: none;
     .c-link {
       position: relative;
       display: -webkit-box;
@@ -79,34 +80,34 @@ export default {
         fill: currentColor;
         transition: .2s;
       }
-    }
-    .c-link::before {
-      content: '';
-      bottom: calc(100% - 7px);
-      border: solid 5px transparent;
-      border-top-color: currentColor;
-    }
-    .c-link::after {
-      content: attr(aria-label);
-      bottom: calc(100% + 3px);
-      padding: .61em .93em;
-      font-size: .875rem;
-      color: white;
-      border-radius: 3px;
-    }
-    .c-link::before, 
-    .c-link::after {
-      position: absolute;
-      left: 50%;
-      -webkit-transform: translate(-50%, -5px);
-      transform: translate(-50%, -5px);
-      opacity: 0;
-      -webkit-transition: .2s;
-      transition: .2s;
-    }
-    .c-link:hover::before,
-    .c-link:hover::after {
-      opacity: 1;
+      &::before {
+        content: '';
+        bottom: calc(100% - 7px);
+        border: solid 5px transparent;
+        border-top-color: currentColor;
+      }
+      &::after {
+        content: attr(aria-label);
+        bottom: calc(100% + 3px);
+        padding: .61em .93em;
+        font-size: .875rem;
+        color: white;
+        border-radius: 3px;
+      }
+      &::before, 
+      &::after {
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translate(-50%, -5px);
+        transform: translate(-50%, -5px);
+        opacity: 0;
+        -webkit-transition: .2s;
+        transition: .2s;
+      }
+      &:hover::before,
+      &:hover::after {
+        opacity: 1;
+      }
     }
   }
 </style>

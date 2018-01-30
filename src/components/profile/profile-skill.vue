@@ -17,7 +17,7 @@
     <div class="card-body">
       <progress-bar v-for="item in lang" :kind="item.name" :target="item.value">
         <div class="progress-value" slot-scope="props">
-          <span>{{ item.name }}</span>
+          <span class="lang">{{ item.name }}</span>
           <span :class="props.text">{{ item.value }} %</span>
         </div>
       </progress-bar>
@@ -107,7 +107,7 @@ export default {
       display: inline-block;
       width: 24px;
       height: 24px;
-      border-radius: 0.25rem;
+      border-radius: .25rem;
     }
     .point-a {
       background-color: #273238;
@@ -121,11 +121,11 @@ export default {
   }
 
   .progress-value {
-    display: flex;
-    font-size: .875rem;
-    padding-bottom: .25rem;
-    .level-100 {
+    .lang {
       font-weight: bold;
+    }
+    .level-100 {
+      // font-weight: bold;
       // color: #ff5258;
     }
     .level-75 {

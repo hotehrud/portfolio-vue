@@ -76,7 +76,7 @@ export default {
       margin: 0;
       font-size: .8125rem;
       font-weight: 400;
-      color: rgba(0,0,0,.54);
+      color: rgba(0, 0, 0, .54);
     }
     .icon-group {
       position: relative;
