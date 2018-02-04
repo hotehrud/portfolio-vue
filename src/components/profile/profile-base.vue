@@ -9,9 +9,9 @@
           <ul>
             <sns-group 
               v-for="item in sns" 
-              :name="item.name" 
-              :image="item.image" 
-              :link="item.link" />
+              :name="item.social_name" 
+              :image="item.social_imageURL" 
+              :link="item.social_address" />
           </ul>
         </div>
       </div>

@@ -15,9 +15,6 @@ export default {
     }
   },
   props: {
-    kind: {
-      type: String
-    },
     target: {
       type: Number
     }

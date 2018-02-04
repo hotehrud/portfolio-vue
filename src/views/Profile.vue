@@ -56,85 +56,58 @@ export default {
   data () {
     return {
       baseItems: {
-        name: 'Lee Jung Hyun',
-        company: 'Software Developer at Vtouch',
-        picture: 'me.jpeg',
-        sns: [
-          {
-            name: 'tistory',
-            image: 'tistory.svg',
-            link: 'https://mygumi.tistory.com/'
-          },
-          {
-            name: 'github',
-            image: 'github.svg',
-            link: 'https://github.com/hotehrud/'
-          },
-          {
-            name: 'codepen',
-            image: 'codepen.svg',
-            link: 'https://codepen.io/mygumi/'
-          },
-          {
-            name: 'baekjoon',
-            image: 'baekjoon.svg',
-            link: 'https://acmicpc.net/user/hotehrud'
-          }
-        ]
+        name: '',
+        company: '',
+        picture: '',
+        sns: []
       },
       skillItems: {
         title: 'Skills',
         image: 'plus-one.svg',
-        lang: [
-          {
-            name: 'HTML/CSS',
-            value: 100
-          },
-          {
-            name: 'JS(Vue/Node.js)',
-            value: 100
-          },
-          {
-            name: 'JAVA',
-            value: 75
-          },
-          {
-            name: 'PHP',
-            value: 50
-          }
-        ]
+        lang: []
       },
       bioItems: {
         title: 'Profile',
         image: 'profile.svg',
-        text: 'abc'
+        text: ''
       },
       infoItems: {
         title: 'Information',
         image: 'info.svg',
         info: {
-          name: 'Lee JungHyun',
-          date_of_birth: '1992.11.24',
-          sex: 'male',
-          email: 'hotehrud@naver.com',
-          address: 'Seoul'
+          name: '',
+          date_of_birth: '',
+          email: '',
+          address: ''
         }
       },
       toolItems: {
         title: 'Toolbox',
         image: 'wrench.svg',
-        tool: [
-          'git',
-          'webpack',
-          'electron',
-          'redis',
-          'mysql'
-        ]
+        tool: []
       }
     }
   },
-  methods: {
+  created () {
+    this.$http.get('https://mygumi.me:3000/profile').then(res => {
+      let datas = res.data
+      let info = datas.informations[0]
+      let toolbox = datas.toolboxes[0]
 
+      this.baseItems.name = datas.profile_name
+      this.baseItems.company = datas.profile_company
+      this.baseItems.picture = datas.profile_imageURL
+      this.baseItems.sns = datas.socials
+      this.bioItems.text = datas.profile_bio
+      this.skillItems.lang = datas.skills
+      this.infoItems.info.name = info.info_name
+      this.infoItems.info.date_of_birth = info.info_date_of_birth
+      this.infoItems.info.email = info.info_email
+      this.infoItems.info.address = info.info_address
+      this.toolItems.tool = toolbox.toolbox_kind.split(',')
+    })
+  },
+  methods: {
   }
 }
 </script>

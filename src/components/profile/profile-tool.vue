@@ -32,7 +32,7 @@ export default {
       type: String
     },
     tools: {
-      type: String
+      type: Array
     }
   },
   computed: {

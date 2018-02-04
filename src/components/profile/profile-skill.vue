@@ -15,10 +15,10 @@
       </transition-group>
     </div>
     <div class="card-body">
-      <progress-bar v-for="item in lang" :kind="item.name" :target="item.value">
+      <progress-bar v-for="item in lang" :target="item.skill_value">
         <div class="progress-value" slot-scope="props">
-          <span class="lang">{{ item.name }}</span>
-          <span :class="props.text">{{ item.value }} %</span>
+          <span class="lang">{{ item.skill_name }}</span>
+          <span :class="props.text">{{ item.skill_value }} %</span>
         </div>
       </progress-bar>
     </div>
