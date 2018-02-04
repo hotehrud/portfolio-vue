@@ -1,39 +1,45 @@
 <template>
   <div class="profile-base">
     <div class="card-body">
-      <div class="profile">
-        <img class="profile-pictuce" :src="meImage"/>
-        <h4 class="profile-name">{{ name }}</h4>
-        <h6 class="profile-company">{{ company }}</h6>
-        <div class="icon-group">
-          <ul>
-            <sns-group 
-              v-for="item in sns" 
-              :name="item.social_name" 
-              :image="item.social_imageURL" 
-              :link="item.social_address" />
-          </ul>
+      <loading v-if="waiting"/>
+      <transition name="fade">
+        <div v-if="!waiting" class="profile">
+          <img class="profile-picture" :src="imageURL"/>
+          <h4 class="profile-name">{{ name }}</h4>
+          <h6 class="profile-company">{{ company }}</h6>
+          <div class="icon-group">
+            <ul>
+              <sns-group 
+                v-for="item in sns" 
+                :name="item.social_name" 
+                :image="item.social_imageURL" 
+                :link="item.social_address" />
+            </ul>
+          </div>
         </div>
-      </div>
+      </transition>
     </div>
   </div>
 </template>
 
 <script>
 import snsGroup from '@/components/profile/profile-sns-component'
-import me from '@/assets/img/me.jpeg'
+import loading from '@/components/shared-components/loading'
 
 export default {
-  name: 'profile-bio',
+  name: 'profile-base',
   components: {
-    snsGroup
+    snsGroup,
+    loading
   },
   data () {
     return {
-      meImage: me
     }
   },
   props: {
+    waiting: {
+      type: Boolean
+    },
     name: {
       type: String
     },
@@ -45,6 +51,11 @@ export default {
     },
     sns: {
       type: Array
+    }
+  },
+  computed: {
+    imageURL () {
+      return require('@/assets/img/' + this.picture)
     }
   }
 }
@@ -59,7 +70,7 @@ export default {
     @include respond-to($large-desktop) {
       padding: 2rem;
     }
-    .profile-pictuce {
+    .profile-picture {
       width: 125px;
       height: 125px;
       border-radius: 50%;

@@ -15,23 +15,28 @@
       </transition-group>
     </div>
     <div class="card-body">
-      <progress-bar v-for="item in lang" :target="item.skill_value">
-        <div class="progress-value" slot-scope="props">
-          <span class="lang">{{ item.skill_name }}</span>
-          <span :class="props.text">{{ item.skill_value }} %</span>
-        </div>
-      </progress-bar>
+      <loading v-if="waiting"/>
+      <transition-group name="fade" mode="out-in">
+        <progress-bar :key="index" v-if="!waiting" v-for="(item, index) in lang" :target="item.skill_value">
+          <div class="progress-value" slot-scope="props">
+            <span class="lang">{{ item.skill_name }}</span>
+            <span :class="props.text">{{ item.skill_value }} %</span>
+          </div>
+        </progress-bar>
+      </transition-group>
     </div>
   </div>
 </template>
 
 <script>
 import progressBar from '@/components/profile/progress-component'
+import loading from '@/components/shared-components/loading'
 
 export default {
   name: 'profile-skill',
   components: {
-    progressBar
+    progressBar,
+    loading
   },
   data () {
     return {
@@ -42,6 +47,9 @@ export default {
     }
   },
   props: {
+    waiting: {
+      type: Boolean
+    },
     image: {
       type: String
     },
@@ -134,12 +142,5 @@ export default {
     .level-50 {
       // color: #f8bb3a;
     }
-  }
-
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
-  }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
   }
 </style>

@@ -7,16 +7,22 @@
       </h3>
     </div>
     <div class="card-body">
-      <p v-html="text">
-      </p>
-      <li v-for="item in tools">
-      {{ item }}
-      </li>
+      <loading v-if="waiting"/>
+      <transition name="fade">
+        <div v-if="!waiting">
+          <p v-html="text"/>
+          <li v-for="item in tools">
+            {{ item }}
+          </li>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
 
 <script>
+import loading from '@/components/shared-components/loading'
+
 export default {
   name: 'profile-tool',
   data () {
@@ -24,7 +30,13 @@ export default {
       text: 'There are many skills other than language.</br>Here I have listed some of them:'
     }
   },
+  components: {
+    loading
+  },
   props: {
+    waiting: {
+      type: Boolean
+    },
     image: {
       type: String
     },

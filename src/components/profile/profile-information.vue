@@ -7,22 +7,33 @@
       </h3>
     </div>
     <div class="card-body">
-      <div class="column" v-for="(value, key, index) in info">
-        <span class="key">{{ propertyInfo(key) }}</span>
-        <span class="value">{{ value }}</span>
-      </div>
+      <loading v-if="waiting"/>
+      <transition-group name="fade" mode="out-in">
+        <div v-if="!waiting" :key="index" class="column" v-for="(value, key, index) in info">
+          <span class="key">{{ propertyInfo(key) }}</span>
+          <span class="value">{{ value }}</span>
+        </div>
+      </transition-group>
     </div>
   </div>
 </template>
 
 <script>
+import loading from '@/components/shared-components/loading'
+
 export default {
   name: 'profile-info',
   data () {
     return {
     }
   },
+  components: {
+    loading
+  },
   props: {
+    waiting: {
+      type: Boolean
+    },
     image: {
       type: String
     },

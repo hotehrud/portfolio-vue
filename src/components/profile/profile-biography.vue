@@ -7,19 +7,30 @@
       </h3>
     </div>
     <div class="card-body">
-      <p>{{ text }}</p>
+      <transition name="fade" mode="out-in">
+        <loading v-if="waiting"/>
+        <p v-else v-html="text"/>
+      </transition>
     </div>
   </div>
 </template>
 
 <script>
+import loading from '@/components/shared-components/loading'
+
 export default {
   name: 'profile-bio',
+  components: {
+    loading
+  },
   data () {
     return {
     }
   },
   props: {
+    waiting: {
+      type: Boolean
+    },
     image: {
       type: String
     },

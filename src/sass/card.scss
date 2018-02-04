@@ -75,6 +75,7 @@
       }
     }
     .card-body {
+      position: relative;
       padding: 1rem;
     }
   }
@@ -124,5 +125,12 @@
       flex: 0 0 40%;
       margin: 0 1rem 2rem 1rem;
     }
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
   }
 }

@@ -4,12 +4,14 @@
       <div class="row-1">
         <profile-base
           class="card" 
+          :waiting="waiting"
           :name="baseItems.name"
           :company="baseItems.company"
           :picture="baseItems.picture"
           :sns="baseItems.sns"/>
         <profile-skill 
           class="card" 
+          :waiting="waiting"
           :image="skillItems.image"
           :title="skillItems.title"
           :lang="skillItems.lang"/>
@@ -17,17 +19,20 @@
       <div class="row-2">
         <profile-bio 
           class="card" 
+          :waiting="waiting"
           :image="bioItems.image"
           :title="bioItems.title"
           :text="bioItems.text"/>
         <div class="row">
           <profile-info 
             class="row-3 card"
+            :waiting="waiting"
             :image="infoItems.image"
             :title="infoItems.title"
             :info="infoItems.info"/>
           <profile-tool 
             class="row-4 card"
+            :waiting="waiting"
             :image="toolItems.image"
             :title="toolItems.title"
             :tools="toolItems.tool"/>
@@ -55,6 +60,7 @@ export default {
   },
   data () {
     return {
+      waiting: true,
       baseItems: {
         name: '',
         company: '',
@@ -94,17 +100,20 @@ export default {
       let info = datas.informations[0]
       let toolbox = datas.toolboxes[0]
 
-      this.baseItems.name = datas.profile_name
-      this.baseItems.company = datas.profile_company
-      this.baseItems.picture = datas.profile_imageURL
-      this.baseItems.sns = datas.socials
-      this.bioItems.text = datas.profile_bio
-      this.skillItems.lang = datas.skills
-      this.infoItems.info.name = info.info_name
-      this.infoItems.info.date_of_birth = info.info_date_of_birth
-      this.infoItems.info.email = info.info_email
-      this.infoItems.info.address = info.info_address
-      this.toolItems.tool = toolbox.toolbox_kind.split(',')
+      setTimeout(() => {
+        this.waiting = false
+        this.baseItems.name = datas.profile_name
+        this.baseItems.company = datas.profile_company
+        this.baseItems.picture = datas.profile_imageURL
+        this.baseItems.sns = datas.socials
+        this.bioItems.text = datas.profile_bio
+        this.skillItems.lang = datas.skills
+        this.infoItems.info.name = info.info_name
+        this.infoItems.info.date_of_birth = info.info_date_of_birth
+        this.infoItems.info.email = info.info_email
+        this.infoItems.info.address = info.info_address
+        this.toolItems.tool = toolbox.toolbox_kind.split(',')
+      }, 1500)
     })
   },
   methods: {
