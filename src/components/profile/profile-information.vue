@@ -19,17 +19,8 @@
 </template>
 
 <script>
-import loading from '@/components/shared-components/loading'
-
 export default {
   name: 'profile-info',
-  data () {
-    return {
-    }
-  },
-  components: {
-    loading
-  },
   props: {
     waiting: {
       type: Boolean

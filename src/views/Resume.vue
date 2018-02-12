@@ -3,8 +3,12 @@
     <div class="row">
       <resume-experience
         class="row-4 card"
-        :title="experienceItems.title"/>
+        :waiting="waiting"
+        :title="experienceItems.title"
+        :image="experienceItems.image"
+        :experience="experienceItems.experience"/>
       <resume-education
+        :waiting="waiting"
         class="row-4 card"
         :title="educationItems.title"/>
     </div>
@@ -23,16 +27,26 @@ export default {
   },
   data () {
     return {
+      waiting: true,
       experienceItems: {
-        title: 'Experience'
+        title: 'Experience',
+        image: 'experience.svg',
+        experience: []
       },
       educationItems: {
         title: 'Education'
       }
     }
   },
-  methods: {
+  created () {
+    this.$http.get('https://mygumi.me:3000/resume/1').then(res => {
+      let datas = res.data
 
+      setTimeout(() => {
+        this.waiting = false
+        this.experienceItems.experience = datas.experiences.reverse()
+      }, 1000)
+    })
   }
 }
 </script>

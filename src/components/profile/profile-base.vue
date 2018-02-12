@@ -24,17 +24,11 @@
 
 <script>
 import snsGroup from '@/components/profile/profile-sns-component'
-import loading from '@/components/shared-components/loading'
 
 export default {
   name: 'profile-base',
   components: {
-    snsGroup,
-    loading
-  },
-  data () {
-    return {
-    }
+    snsGroup
   },
   props: {
     waiting: {

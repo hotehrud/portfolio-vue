@@ -46,16 +46,16 @@ export default {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    width: calc(100% - #{ $sidebar-width });
+    width: 100%;
     min-height: 65px;
     padding: 0 1rem;
     background-color: #fff;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .21);
-  }
-
-  .toolbar {
-    @include respond-to($tablet-portrait) {
-      width: 100%;
+    @include respond-to($tablet-landscape) {
+      width: calc(100% - #{ $sidebar-width });
+    } 
+    @include respond-to($large-desktop) {
+      width: calc(100% - #{ $sidebar-width });
     }
   }
 

@@ -83,6 +83,7 @@ export default {
         info: {
           name: '',
           date_of_birth: '',
+          tel: '',
           email: '',
           address: ''
         }
@@ -95,7 +96,7 @@ export default {
     }
   },
   created () {
-    this.$http.get('https://mygumi.me:3000/profile').then(res => {
+    this.$http.get('https://mygumi.me:3000/profile/1').then(res => {
       let datas = res.data
       let info = datas.informations[0]
       let toolbox = datas.toolboxes[0]
@@ -110,10 +111,11 @@ export default {
         this.skillItems.lang = datas.skills
         this.infoItems.info.name = info.info_name
         this.infoItems.info.date_of_birth = info.info_date_of_birth
+        this.infoItems.info.tel = info.info_tel
         this.infoItems.info.email = info.info_email
         this.infoItems.info.address = info.info_address
         this.toolItems.tool = toolbox.toolbox_kind.split(',')
-      }, 1500)
+      }, 1000)
     })
   },
   methods: {

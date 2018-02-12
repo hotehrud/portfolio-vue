@@ -24,6 +24,7 @@
   }
   .card {
     position: relative;
+    overflow: hidden;
     top: 0;
     background-color: #fff;
     border-radius: 2px;
@@ -77,6 +78,9 @@
     .card-body {
       position: relative;
       padding: 1rem;
+      p {
+        word-wrap: break-word;
+      }
     }
   }
   .row-1 {

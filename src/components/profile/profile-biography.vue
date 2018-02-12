@@ -16,17 +16,8 @@
 </template>
 
 <script>
-import loading from '@/components/shared-components/loading'
-
 export default {
   name: 'profile-bio',
-  components: {
-    loading
-  },
-  data () {
-    return {
-    }
-  },
   props: {
     waiting: {
       type: Boolean

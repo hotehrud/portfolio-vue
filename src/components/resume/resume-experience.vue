@@ -2,12 +2,26 @@
   <div class="resume-experience">
     <div class="card-header">
       <h3>
-        <svg viewBox="0 0 24 24"><path fill="#000000" fill-opacity="0.87" d="M14,6H10V4H14M20,6H16V4L14,2H10L8,4V6H4C2.89,6 2,6.89 2,8V19A2,2 0 0,0 4,21H20A2,2 0 0,0 22,19V8C22,6.89 21.1,6 20,6Z"></path></svg>
+        <img :src="imageURL"/>
         {{ title }}
       </h3>
     </div>
     <div class="card-body">
-      <p>{{ text }}</p>
+      <loading v-if="waiting"/>
+      <transition name="fade">
+        <ul v-if="!waiting" class="timeline">
+          <li v-for="(item, index) in experience">
+            <h3 class="title">{{ item.experience_title }}</h3>
+            <div class="information">
+              <span class="location">
+                <img :src="mapImage" alt="Location"> {{  item.experience_location}}
+              </span>
+              <span class="time">{{ item.experience_date }}</span>
+            </div>
+            <p v-html="item.experience_description"/>
+          </li>
+        </ul>
+      </transition>
     </div>
   </div>
 </template>
@@ -15,24 +29,26 @@
 <script>
 export default {
   name: 'resume-experience',
-  data () {
-    return {
-    }
-  },
   props: {
+    waiting: {
+      type: Boolean
+    },
     image: {
       type: String
     },
     title: {
       type: String
     },
-    text: {
-      type: String
+    experience: {
+      type: Array
     }
   },
   computed: {
     imageURL () {
       return require('@/assets/img/' + this.image)
+    },
+    mapImage () {
+      return require('@/assets/img/map-marker.svg')
     }
   }
 }
@@ -41,11 +57,61 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   .resume-experience {
-    @include respond-to($tablet-landscape) {
-      margin-right: 2%;
-    } 
     @include respond-to($large-desktop) {
       margin-right: 2%;
+    }
+    .timeline {
+      position: relative;
+      margin: 0 0 0 .625rem;
+      text-align: left;
+      list-style: none;
+      li {
+        position: relative;
+        padding: 0 0 1rem 1rem;
+        @include respond-to($large-desktop) {
+          padding: 0 0 2.5rem 2.5rem;
+        }
+        border-left: 2px solid rgba(0,0,0,.12);
+        &:before {
+          content: "";
+          width: 1rem;
+          height: 1rem;
+          position: absolute;
+          top: 0;
+          left: -7px;
+          border-radius: 50%;
+          background-color: #fff;
+          padding: 4px;
+          padding: .25rem;
+          border: 4px solid #546e7a;
+          -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.21);
+          box-shadow: 0 1px 3px 0 rgba(0,0,0,.21);
+        }
+        h3 {
+          margin: 0;
+        }
+        .information {
+          display: flex;
+          color: rgba(0,0,0,.54);
+          .location {
+            font-size: .75rem;
+            img {
+              position: relative;
+              top: 1px;
+              opacity: .3;
+              width: .75rem;
+              height: .75rem;
+            }
+          }
+          .time {
+            margin-left: auto;
+            font-size: .875rem;
+          }
+        }
+        p {
+          padding-right: 2.5rem;
+        }
+      }
     }
   }
 </style>

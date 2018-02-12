@@ -27,6 +27,9 @@
 <script>
 import toolbar from '@/components/header/header-toolbar'
 import sidebar from '@/components/sidebar/sidebar'
+import Vue from 'vue'
+import loading from '@/components/shared-components/loading'
+Vue.component('loading', loading)
 
 export default {
   name: 'app',
@@ -52,7 +55,8 @@ export default {
 <style lang="scss">
   @import "./sass/main.scss";
   @import "./sass/card.scss";
-  * {
+  *, :after, :before {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
 

@@ -21,17 +21,12 @@
 </template>
 
 <script>
-import loading from '@/components/shared-components/loading'
-
 export default {
   name: 'profile-tool',
   data () {
     return {
       text: 'There are many skills other than language.</br>Here I have listed some of them:'
     }
-  },
-  components: {
-    loading
   },
   props: {
     waiting: {

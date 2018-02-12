@@ -7,7 +7,10 @@
       </h3>
     </div>
     <div class="card-body">
-      <p>{{ text }}</p>
+      <loading v-if="waiting"/>
+      <transition name="fade">
+        <p v-if="!waiting">{{ text }}</p>
+      </transition>
     </div>
   </div>
 </template>
@@ -20,6 +23,9 @@ export default {
     }
   },
   props: {
+    waiting: {
+      type: Boolean
+    },
     image: {
       type: String
     },
@@ -39,6 +45,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  
+<style lang="scss" scoped>
+  p {
+    padding-right: 2.5rem;
+  }
 </style>

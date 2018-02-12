@@ -10,10 +10,6 @@
 <script>
 export default {
   name: 'sns-group',
-  data () {
-    return {
-    }
-  },
   props: {
     name: {
       type: String
