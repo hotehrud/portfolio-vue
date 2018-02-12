@@ -55,6 +55,17 @@ export default {
 <style lang="scss">
   @import "./sass/main.scss";
   @import "./sass/card.scss";
+
+  @font-face { 
+    font-family: 'BM DOHYEON';
+    src: url('https://hotehrud.github.io/portfolio-vue/static/fonts/BMDOHYEON.ttf') format('truetype');
+  }
+
+  @font-face { 
+    font-family: 'BM JUA';
+    src: url('https://hotehrud.github.io/portfolio-vue/static/fonts/BMJUA.ttf') format('truetype');
+  }
+
   *, :after, :before {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -66,12 +77,11 @@ export default {
   }
 
   html {
-    font-family: Roboto Draft,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 16px;
   }
 
   body {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
@@ -80,6 +90,14 @@ export default {
     margin: 0;
     padding: 0;
     background-color: $bg-color;
+  }
+
+  h1, h2, h3 {
+    font-family: BM DOHYEON, Helvetica Neue, Helvetica, Arial, sans-serif;
+  }
+
+  h4, h5, h6, span, p, :after, :before {
+    font-family: BM JUA, Helvetica Neue, Helvetica, Arial, sans-serif;
   }
 
   #app {

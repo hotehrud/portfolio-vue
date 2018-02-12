@@ -58,9 +58,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  .progress-value {
-    .lang {
-      font-weight: bold;
-    }
-  }
 </style>

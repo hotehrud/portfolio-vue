@@ -55,12 +55,14 @@ export default {
   .profile-tool {
     font-size: .875rem;
     text-align: left;
-    color: rgba(0, 0, 0, .65);
-    p {
-      margin: 0 0 1rem 0;
-    }
-    li {
-      padding: .21rem 0;
+    .card-body {
+      color: rgba(0, 0, 0, .65);
+      p {
+        margin: 0 0 1rem 0;
+      }
+      li {
+        padding: .21rem 0;
+      }
     }
   }
 </style>
