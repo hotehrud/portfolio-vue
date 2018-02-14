@@ -62,7 +62,7 @@
       padding-left: 1rem;
       border-bottom: 1px solid rgba(0, 0, 0, .12);
       h3 {
-        opacity: 0.8;
+        opacity: .8;
         line-height: 1.5rem;
         margin: 0;
         display: -webkit-box;
@@ -71,6 +71,7 @@
         display: -webkit-flex;
         display: flex;
         img, svg {
+          opacity: .8;
           margin-right: 0.5rem;
           width: 1.5rem;
           height: 1.5rem;

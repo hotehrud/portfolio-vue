@@ -10,7 +10,9 @@
       <resume-education
         :waiting="waiting"
         class="row-4 card"
-        :title="educationItems.title"/>
+        :title="educationItems.title"
+        :image="educationItems.image"
+        :education="educationItems.education"/>
     </div>
   </div>
 </template>
@@ -34,7 +36,9 @@ export default {
         experience: []
       },
       educationItems: {
-        title: 'Education'
+        title: 'Education',
+        image: 'experience.svg',
+        education: []
       }
     }
   },

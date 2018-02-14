@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <div class="row ignore">
+    <div class="row">
       <project-card class="row-5 card" v-for="(item, index) in projectItems" :title="item.title" :image="item.image"/>
     </div>
   </div>

@@ -2,14 +2,27 @@
   <div class="resume-education">
     <div class="card-header">
       <h3>
-        <svg viewBox="0 0 24 24"><path fill="#000000" fill-opacity="0.87" d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"></path></svg>
+        <img :src="imageURL"/>
         {{ title }}
       </h3>
     </div>
     <div class="card-body">
       <loading v-if="waiting"/>
       <transition name="fade">
-        <p v-if="!waiting">{{ text }}</p>
+        <transition name="fade">
+        <ul v-if="!waiting" class="timeline">
+          <li v-for="(item, index) in education">
+            <h3 class="title">{{ item.education_title }}</h3>
+            <div class="information">
+              <span class="location">
+                <img :src="mapImage" alt="Location"> {{  item.education_location}}
+              </span>
+              <span class="time">{{ item.education_date }}</span>
+            </div>
+            <p v-html="item.education_description"/>
+          </li>
+        </ul>
+      </transition>
       </transition>
     </div>
   </div>
@@ -32,13 +45,16 @@ export default {
     title: {
       type: String
     },
-    text: {
-      type: String
+    education: {
+      type: Array
     }
   },
   computed: {
     imageURL () {
       return require('@/assets/img/' + this.image)
+    },
+    mapImage () {
+      return require('@/assets/img/map-marker.svg')
     }
   }
 }

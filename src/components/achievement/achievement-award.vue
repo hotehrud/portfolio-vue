@@ -1,46 +1,52 @@
 <template>
-  <div class="resume-experience">
-    <div class="card-header">
-      <h3>
-        <img :src="imageURL"/>
-        {{ title }}
-      </h3>
-    </div>
-    <div class="card-body">
-      <loading v-if="waiting"/>
-      <transition name="fade">
+  <div class="achievement-award">
+    <card :waiting="waiting">
+      <div slot="header" class="card-header">
+        <h3>
+          <img :src="imageURL"/>
+          {{ title }}
+        </h3>
+      </div>
+
+      <div slot="body">
         <ul v-if="!waiting" class="timeline">
-          <li v-for="(item, index) in experience">
-            <h3 class="title">{{ item.experience_title }}</h3>
+          <li v-for="(item, index) in award">
+            <h3 class="title">{{ mergeTitle(item.award_title, item.award_kind) }}</h3>
             <div class="information">
               <span class="location">
-                <img :src="mapImage" alt="Location"> {{ item.experience_location }}
+                <img :src="mapImage" alt="Host"> {{ item.award_host }}
               </span>
-              <span class="time">{{ item.experience_date }}</span>
+              <span class="time">{{ item.award_date }}</span>
             </div>
-            <p v-html="item.experience_description"/>
           </li>
         </ul>
-      </transition>
-    </div>
+      </div>
+    </card>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'resume-experience',
+  name: 'achievement-award',
+  components: {
+  },
   props: {
     waiting: {
       type: Boolean
     },
-    image: {
-      type: String
-    },
     title: {
       type: String
     },
-    experience: {
+    image: {
+      type: String
+    },
+    award: {
       type: Array
+    }
+  },
+  methods: {
+    mergeTitle (title, kind) {
+      return title + ' / ' + kind
     }
   },
   computed: {
@@ -48,7 +54,7 @@ export default {
       return require('@/assets/img/' + this.image)
     },
     mapImage () {
-      return require('@/assets/img/map-marker.svg')
+      return require('@/assets/img/host.svg')
     }
   }
 }
@@ -56,7 +62,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  .resume-experience {
+  .achievement-award {
     @include respond-to($large-desktop) {
       margin-right: 2%;
     }
@@ -69,23 +75,15 @@ export default {
         position: relative;
         padding: 0 0 1rem 1rem;
         @include respond-to($large-desktop) {
-          padding: 0 0 2.5rem 2.5rem;
+          padding: 0 0 1.5rem 2.5rem;
         }
-        border-left: 2px solid rgba(0,0,0,.12);
         &:before {
-          content: "";
+          content: url(../../assets/img/medal.svg);
           width: 1rem;
           height: 1rem;
           position: absolute;
           top: 0;
-          left: -9px;
-          border-radius: 50%;
-          background-color: #fff;
-          padding: 4px;
-          padding: .25rem;
-          border: 4px solid #546e7a;
-          -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.21);
-          box-shadow: 0 1px 3px 0 rgba(0,0,0,.21);
+          left: -8px;
         }
         h3 {
           font-size: 1rem;

@@ -28,7 +28,9 @@
 import toolbar from '@/components/header/header-toolbar'
 import sidebar from '@/components/sidebar/sidebar'
 import Vue from 'vue'
+import card from '@/components/shared-components/card'
 import loading from '@/components/shared-components/loading'
+Vue.component('card', card)
 Vue.component('loading', loading)
 
 export default {
@@ -58,12 +60,12 @@ export default {
 
   @font-face { 
     font-family: 'BM DOHYEON';
-    src: url('https://hotehrud.github.io/portfolio-vue/static/fonts/BMDOHYEON.ttf') format('truetype');
+    src: url('https://hotehrud.github.io/portfolio-vue/fonts/BMDOHYEON.ttf') format('truetype');
   }
 
   @font-face { 
     font-family: 'BM JUA';
-    src: url('https://hotehrud.github.io/portfolio-vue/static/fonts/BMJUA.ttf') format('truetype');
+    src: url('https://hotehrud.github.io/portfolio-vue/fonts/BMJUA.ttf') format('truetype');
   }
 
   *, :after, :before {
