@@ -11,7 +11,7 @@
       <transition name="fade">
         <ul v-if="!waiting" class="timeline">
           <li v-for="(item, index) in experience">
-            <h3 class="title">{{ item.experience_title }}</h3>
+            <h4 class="title">{{ item.experience_title }}</h4>
             <div class="information">
               <span class="location">
                 <img :src="mapImage" alt="Location"> {{ item.experience_location }}
@@ -86,10 +86,6 @@ export default {
           border: 4px solid #546e7a;
           -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.21);
           box-shadow: 0 1px 3px 0 rgba(0,0,0,.21);
-        }
-        h3 {
-          font-size: 1rem;
-          margin: 0;
         }
         .information {
           display: flex;

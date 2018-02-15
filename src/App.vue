@@ -100,6 +100,7 @@ export default {
 
   h4, h5, h6, span, p, :after, :before {
     font-family: BM JUA, Helvetica Neue, Helvetica, Arial, sans-serif;
+    margin: 0;
   }
 
   #app {

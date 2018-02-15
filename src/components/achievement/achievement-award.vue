@@ -9,12 +9,12 @@
       </div>
 
       <div slot="body">
-        <ul v-if="!waiting" class="timeline">
+        <ul class="timeline">
           <li v-for="(item, index) in award">
-            <h3 class="title">{{ mergeTitle(item.award_title, item.award_kind) }}</h3>
+            <h4 class="title">{{ item.award_title }}</h4>
             <div class="information">
               <span class="location">
-                <img :src="mapImage" alt="Host"> {{ item.award_host }}
+                <img :src="mapImage" alt="Host"> {{ item.award_location }}
               </span>
               <span class="time">{{ item.award_date }}</span>
             </div>
@@ -42,11 +42,6 @@ export default {
     },
     award: {
       type: Array
-    }
-  },
-  methods: {
-    mergeTitle (title, kind) {
-      return title + ' / ' + kind
     }
   },
   computed: {
@@ -82,12 +77,8 @@ export default {
           width: 1rem;
           height: 1rem;
           position: absolute;
-          top: 0;
+          top: 2px;
           left: -8px;
-        }
-        h3 {
-          font-size: 1rem;
-          margin: 0;
         }
         .information {
           display: flex;
@@ -107,9 +98,9 @@ export default {
             font-size: .875rem;
           }
         }
-        p {
-          padding-right: 2.5rem;
-        }
+      }
+      li:last-child {
+        padding-bottom: 0;
       }
     }
   }

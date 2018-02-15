@@ -33,20 +33,7 @@ export default {
       awardItems: {
         title: 'Award',
         image: 'award.svg',
-        award: [
-          {
-            award_title: 'ABCDCDC',
-            award_kind: '2R',
-            award_host: 'BBBBBB',
-            award_date: 'Oct, 2017'
-          },
-          {
-            award_title: 'BSBDCS',
-            award_kind: '1R',
-            award_host: 'CCCCC',
-            award_date: 'May, 2015'
-          }
-        ]
+        award: []
       },
       certItems: {
         title: 'Certification',
@@ -56,14 +43,15 @@ export default {
     }
   },
   created () {
-    // this.$http.get('https://mygumi.me:3000/resume/1').then(res => {
-    //   let datas = res.data
+    this.$http.get('https://mygumi.me:3000/achievement/1').then(res => {
+      let datas = res.data
 
       setTimeout(() => {
         this.waiting = false
-        // this.experienceItems.experience = datas.experiences.reverse()
-      }, 1000)
-    // })
+        this.awardItems.award = datas.awards
+        this.certItems.cert = datas.certifications
+      }, 1500)
+    })
   }
 }
 </script>

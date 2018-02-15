@@ -4,7 +4,7 @@
     <div class="card-body">
       <loading v-if="waiting"/>
       <transition name="fade" mode="out-in">
-        <slot name="body"/>
+        <slot name="body" v-if="!waiting"/>
       </transition>
     </div>
   </div>
