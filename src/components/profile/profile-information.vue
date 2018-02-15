@@ -52,9 +52,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   .profile-info {
-    @include respond-to($tablet-landscape) {
-      margin-right: 4%;
-    } 
     @include respond-to($large-desktop) {
       margin-right: 4%;
     }

@@ -1,32 +1,47 @@
 <template>
   <div class="project-card">
-    <div class="card-header">
-      <h3>
-        <img :src="imageURL"/>
-        {{ title }}
-      </h3>
-    </div>
-    <div class="card-body">
-      <p>{{ text }}</p>
-    </div>
+    <card :waiting="waiting">
+      <div slot="header" class="card-header">
+        <h3>
+          <img :src="imageURL"/>
+          {{ title }}
+        </h3>
+      </div>
+
+      <div slot="body">
+        
+      </div>
+    </card>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'profile-tool',
+  name: 'project-card',
   data () {
     return {
     }
   },
   props: {
-    image: {
-      type: String
+    waiting: {
+      type: Boolean
     },
     title: {
       type: String
     },
-    text: {
+    subtitle: {
+      type: String
+    },
+    image: {
+      type: String
+    },
+    link: {
+      type: String
+    },
+    desc: {
+      type: String
+    },
+    skill: {
       type: String
     }
   },

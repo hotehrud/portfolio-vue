@@ -1,11 +1,4 @@
 .container .layout .body .main .row {
-  @include respond-to($tablet-landscape) {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-  } 
   @include respond-to($large-desktop) {
     display: -webkit-box;
     display: -moz-box;
@@ -81,56 +74,33 @@
     .card-body {
       position: relative;
       padding: 1rem;
-      p {
+      p, span {
         word-wrap: break-word;
       }
     }
   }
   .row-1 {
-    @include respond-to($tablet-landscape) {
-      flex: 0 0 33.33333333%;
-    } 
     @include respond-to($large-desktop) {
       flex: 0 0 33.33333333%;
     }
   }
   .row-2 {
-    @include respond-to($tablet-landscape) {
-      flex: 0 0 66.66666666%;
-    } 
     @include respond-to($large-desktop) {
       flex: 0 0 66.66666666%;
-    }
-  }
-  .row-3 {
-    padding-left: 0rem;
-    padding-right: 0rem;
-    @include respond-to($tablet-landscape) {
-      flex: 0 0 48%;
     } 
-    @include respond-to($large-desktop) {
-      flex: 0 0 48%;
-    }
   }
+
   .row-4 {
     padding-left: 0rem;
     padding-right: 0rem;
-    @include respond-to($tablet-landscape) {
-      flex: 0 0 48%;
-    } 
     @include respond-to($large-desktop) {
       flex: 0 0 48%;
-    }
+    } 
   }
 
   .row-5 {
-    @include respond-to($tablet-landscape) {
-      flex: 0 0 40%;
-      margin: 0 1rem 2rem 1rem;
-    } 
     @include respond-to($large-desktop) {
-      flex: 0 0 40%;
-      margin: 0 1rem 2rem 1rem;
+      flex: 0 0 45%;
     }
   }
 

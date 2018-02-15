@@ -25,7 +25,7 @@
           :text="bioItems.text"/>
         <div class="row">
           <profile-info 
-            class="row-3 card"
+            class="row-4 card"
             :waiting="waiting"
             :image="infoItems.image"
             :title="infoItems.title"

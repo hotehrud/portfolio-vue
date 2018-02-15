@@ -126,9 +126,6 @@ export default {
 
   .body {
     padding: 1rem;
-    @include respond-to($tablet-landscape) {
-      padding: 2rem 1rem;
-    } 
     @include respond-to($large-desktop) {
       padding: 2rem 1rem;
     }
@@ -137,9 +134,6 @@ export default {
   .container {
     padding-top: 65px;
     height: 100%;
-    @include respond-to($tablet-landscape) {
-      padding-left: $sidebar-width;
-    } 
     @include respond-to($large-desktop) {
       padding-left: $sidebar-width;
     }
@@ -181,12 +175,6 @@ export default {
   }
   .slide-fade-enter, .slide-fade-leave-active {
     opacity: 0;
-    @include respond-to($tablet-landscape) {
-      // transform: scale(0);
-    } 
-    @include respond-to($large-desktop) {
-      // transform: scale(0);
-    }
   }
   
   .c-link--tistory:hover  { color: #ed5306 !important }

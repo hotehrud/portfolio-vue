@@ -20,9 +20,6 @@ export default {
     return {
     }
   },
-  mounted () {
-
-  },
   computed: {
     pageName () {
       return this.$route.name
@@ -51,24 +48,21 @@ export default {
     padding: 0 1rem;
     background-color: #fff;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .21);
-    @include respond-to($tablet-landscape) {
-      width: calc(100% - #{ $sidebar-width });
-    } 
     @include respond-to($large-desktop) {
       width: calc(100% - #{ $sidebar-width });
     }
   }
 
   .menu {
-    display: none;
+    display: block;
     width: 40px;
     height: 40px;
     padding: .5rem;
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: 2px;
-    @include respond-to($tablet-portrait) {
-      display: block;
+    @include respond-to($large-desktop) {
+      display: none;
     }
   }
 

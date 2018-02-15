@@ -80,12 +80,10 @@ export default {
     width: $sidebar-width;
     background-color: $primary-color;
 
-    @include respond-to($tablet-landscape) {
-      transform: translateZ(0);
-    } 
     @include respond-to($large-desktop) {
       transform: translateZ(0);
-    }
+    } 
+
     .logo {
       display: -webkit-box;
       display: -ms-flexbox;
