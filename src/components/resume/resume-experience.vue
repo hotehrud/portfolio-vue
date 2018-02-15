@@ -90,6 +90,7 @@ export default {
         .information {
           display: flex;
           color: rgba(0,0,0,.54);
+          margin: 5px 0px;
           .location {
             font-size: .75rem;
             img {
@@ -108,6 +109,9 @@ export default {
         p {
           padding-right: 2.5rem;
         }
+      }
+      li:last-child {
+        padding-bottom: 0;
       }
     }
   }

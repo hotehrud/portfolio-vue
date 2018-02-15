@@ -168,6 +168,11 @@ export default {
     cursor: pointer;
   }
 
+  .score {
+    font-size: .75rem;
+    text-align: right;
+  }
+
   .slide-fade-enter-active {
     transition: all .5s ease;
   }

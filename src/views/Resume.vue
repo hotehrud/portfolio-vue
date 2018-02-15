@@ -37,7 +37,7 @@ export default {
       },
       educationItems: {
         title: 'Education',
-        image: 'experience.svg',
+        image: 'education.svg',
         education: []
       }
     }
@@ -49,7 +49,8 @@ export default {
       setTimeout(() => {
         this.waiting = false
         this.experienceItems.experience = datas.experiences.reverse()
-      }, 1000)
+        this.educationItems.education = datas.educations.reverse()
+      }, 1500)
     })
   }
 }
