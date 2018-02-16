@@ -38,9 +38,15 @@ export default {
   .toolbar {
     position: absolute;
     top: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
     width: 100%;
