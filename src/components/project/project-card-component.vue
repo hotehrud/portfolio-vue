@@ -10,15 +10,18 @@
           <h4>{{ subtitle }}</h4>
         </div>
         <div class="project-link">
-          <a :href="link">
+          <a v-if="link" :href="link">
             <svg viewBox="0 0 24 24"><path d="M17.9,17.39C17.64,16.59 16.89,16 16,16H15V13A1,1 0 0,0 14,12H8V10H10A1,1 0 0,0 11,9V7H13A2,2 0 0,0 15,5V4.59C17.93,5.77 20,8.64 20,12C20,14.08 19.2,15.97 17.9,17.39M11,19.93C7.05,19.44 4,16.08 4,12C4,11.38 4.08,10.78 4.21,10.21L9,15V16A2,2 0 0,0 11,18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg>
           </a>
+          <span v-if="detail" @click="zoomDetail">
+            <svg x="0px" y="0px" width="24px" height="24px" viewBox="0 0 510 510" style="enable-background:new 0 0 24 24;" xml:space="preserve"><path d="M280.5,153h-51v76.5H153v51h76.5V357h51v-76.5H357v-51h-76.5V153z M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255 s255-114.75,255-255S395.25,0,255,0z M255,459c-112.2,0-204-91.8-204-204S142.8,51,255,51s204,91.8,204,204S367.2,459,255,459z"/></svg>
+          </span>
         </div>
       </div>
 
       <div slot="body">
-        <span v-html="desc"/>
-        <br/>
+        <p class="desc" v-html="desc"/>
+        <p><br/></p>
         <span v-html="skill"/>
       </div>
     </card>
@@ -48,6 +51,9 @@ export default {
     link: {
       type: String
     },
+    detail: {
+      type: String
+    },
     desc: {
       type: String
     },
@@ -58,6 +64,11 @@ export default {
   computed: {
     imageURL () {
       return require('@/assets/img/' + this.image)
+    }
+  },
+  methods: {
+    zoomDetail () {
+      this.$parent.$parent.zoom(true, this.detail)
     }
   }
 }
@@ -98,6 +109,9 @@ export default {
         position: absolute;
         top: 0;
         right: 0;
+        span {
+          cursor: pointer;
+        }
         svg {
           width: 1.25rem;
           height: 1.25rem;
@@ -107,6 +121,9 @@ export default {
       h3, h4 {
         margin: 0;
       }
+    }
+    .desc {
+      text-align: left;
     }
   }
 </style>

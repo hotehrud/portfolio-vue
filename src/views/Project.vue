@@ -1,5 +1,6 @@
 <template>
   <div class="main project">
+    <zoom v-if="isZoom" :image="zoomImage"/>
     <div v-if="waiting" class="project-loading">
       <loading/>
     </div>
@@ -15,6 +16,7 @@
               :subtitle="item.project_subtitle"
               :image="item.project_image"
               :link="item.project_link"
+              :detail="item.project_detail"
               :desc="item.project_description"
               :skill="item.project_skill"/>
         </transition-group>
@@ -30,6 +32,7 @@
               :subtitle="item.project_subtitle"
               :image="item.project_image"
               :link="item.project_link"
+              :detail="item.project_detail"
               :desc="item.project_description"
               :skill="item.project_skill"/>
         </transition-group>
@@ -49,6 +52,8 @@ export default {
   data () {
     return {
       waiting: true,
+      isZoom: false,
+      zoomImage: '',
       projectItems: []
     }
   },
@@ -80,6 +85,16 @@ export default {
         temp.push(this.projectItems[i])
       }
       return temp
+    }
+  },
+  methods: {
+    zoom (isZoom, zoomImage) {
+      if (typeof isZoom !== 'undefined') {
+        this.isZoom = isZoom
+      }
+      if (typeof zoomImage !== 'undefined') {
+        this.zoomImage = zoomImage
+      }
     }
   }
 }

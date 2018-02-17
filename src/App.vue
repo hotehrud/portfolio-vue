@@ -27,11 +27,14 @@
 <script>
 import toolbar from '@/components/header/header-toolbar'
 import sidebar from '@/components/sidebar/sidebar'
+
 import Vue from 'vue'
 import card from '@/components/shared-components/card'
 import loading from '@/components/shared-components/loading'
+import zoom from '@/components/shared-components/zoom'
 Vue.component('card', card)
 Vue.component('loading', loading)
+Vue.component('zoom', zoom)
 
 export default {
   name: 'app',
