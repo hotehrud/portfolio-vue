@@ -6,7 +6,8 @@
           <path d="M342.3,132.9c-5.3-5.3-13.8-5.3-19.1,0l-85.6,85.6L152,132.9c-5.3-5.3-13.8-5.3-19.1,0c-5.3,5.3-5.3,13.8,0,19.1 l85.6,85.6l-85.6,85.6c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4l85.6-85.6l85.6,85.6c2.6,2.6,6.1,4,9.5,4 c3.5,0,6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1l-85.4-85.6l85.6-85.6C347.6,146.7,347.6,138.2,342.3,132.9z"/>
         </svg>
       </span>
-      <img :src="imageURL"/>
+      <img v-if="!largeImage" :src="smallImage"/>
+      <img v-if="largeImage" :src="largeImage"/>
     </div>
   </div>
 </template>
@@ -22,6 +23,15 @@ export default {
   },
   data () {
     return {
+      largeImage: null
+    }
+  },
+  mounted () {
+    let imgLarge = new Image()
+    let path = 'https://hotehrud.github.io/portfolio-vue/images/' + this.image.split('.')[0] + '_large.png'
+    imgLarge.src = path
+    imgLarge.onload = () => {
+      this.largeImage = path
     }
   },
   methods: {
@@ -30,7 +40,7 @@ export default {
     }
   },
   computed: {
-    imageURL () {
+    smallImage () {
       return require('@/assets/img/' + this.image)
     }
   }
@@ -73,6 +83,8 @@ export default {
       margin-left: calc(#{ $sidebar-width } / 2);
     }
     .zoom-card {
+      position: relative;
+      width: 100%;
       background-color: #fff;
       border-radius: 5px;
       box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
