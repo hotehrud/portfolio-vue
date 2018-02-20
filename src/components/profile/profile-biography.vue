@@ -9,7 +9,11 @@
     <div class="card-body">
       <transition name="fade" mode="out-in">
         <loading v-if="waiting"/>
-        <p v-else v-html="text"/>
+        <div v-else>
+          <h4>Bio</h4>
+          <p v-html="text"/>
+        </div>
+        
       </transition>
     </div>
   </div>
@@ -41,6 +45,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
+<style lang="scss" scoped>
+  .card-body {
+    text-align: left;
+    h4 {
+      margin: 0 0 .5rem 0;
+    }
+  }
 </style>

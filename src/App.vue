@@ -99,11 +99,16 @@ export default {
 
   h1, h2, h3 {
     font-family: BM DOHYEON, Helvetica Neue, Helvetica, Arial, sans-serif;
+    margin: 0;
   }
 
   h4, h5, h6, span, p, :after, :before {
     font-family: BM JUA, Helvetica Neue, Helvetica, Arial, sans-serif;
     margin: 0;
+  }
+
+  p {
+    color: rgba(0,0,0,.65);
   }
 
   #app {

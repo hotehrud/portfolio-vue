@@ -56,7 +56,6 @@ export default {
     font-size: .875rem;
     text-align: left;
     .card-body {
-      color: rgba(0, 0, 0, .65);
       p {
         margin: 0 0 1rem 0;
       }

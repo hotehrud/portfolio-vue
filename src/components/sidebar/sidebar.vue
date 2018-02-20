@@ -15,12 +15,12 @@
     <menu-list></menu-list>
 
     <div class="made-with">
-      <p>
+      <h4>
         Made with
         <a href="https://vuejs.org">
           <div class="vue"></div>
         </a>
-      </p>
+      </h4>
     </div>
   </div>
 </template>
@@ -134,7 +134,7 @@ export default {
       bottom: 0;
       width: inherit;
       color: #546e7a;
-      p {
+      h4 {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
