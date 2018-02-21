@@ -11,10 +11,6 @@
     -webkit-justify-content: center;
     justify-content: center;
   }
-  > div {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
   .card {
     position: relative;
     overflow: hidden;
@@ -81,11 +77,15 @@
   }
   .row-1 {
     @include respond-to($large-desktop) {
+      padding-left: 1rem;
+      padding-right: 1rem;
       flex: 0 0 33.33333333%;
     }
   }
   .row-2 {
     @include respond-to($large-desktop) {
+      padding-left: 1rem;
+      padding-right: 1rem;
       flex: 0 0 66.66666666%;
     } 
   }
@@ -94,12 +94,16 @@
     padding-left: 0rem;
     padding-right: 0rem;
     @include respond-to($large-desktop) {
+      padding-left: 1rem;
+      padding-right: 1rem;
       flex: 0 0 48%;
     } 
   }
 
   .row-5 {
     @include respond-to($large-desktop) {
+      padding-left: 1rem;
+      padding-right: 1rem;
       flex: 0 0 45%;
     }
   }
