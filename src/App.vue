@@ -32,9 +32,14 @@ import Vue from 'vue'
 import card from '@/components/shared-components/card'
 import loading from '@/components/shared-components/loading'
 import zoom from '@/components/shared-components/zoom'
+import progressbar from '@/components/shared-components/progressbar'
+import social from '@/components/shared-components/social'
+
 Vue.component('card', card)
 Vue.component('loading', loading)
 Vue.component('zoom', zoom)
+Vue.component('progressBar', progressbar)
+Vue.component('snsGroup', social)
 
 export default {
   name: 'app',
@@ -60,16 +65,6 @@ export default {
 <style lang="scss">
   @import "./sass/main.scss";
   @import "./sass/card.scss";
-
-  @font-face { 
-    font-family: 'BM DOHYEON';
-    src: url('https://hotehrud.github.io/portfolio-vue/fonts/BMDOHYEON.ttf') format('truetype');
-  }
-
-  @font-face { 
-    font-family: 'BM JUA';
-    src: url('https://hotehrud.github.io/portfolio-vue/fonts/BMJUA.ttf') format('truetype');
-  }
 
   *, :after, :before {
     -webkit-box-sizing: border-box;
@@ -98,12 +93,12 @@ export default {
   }
 
   h1, h2, h3 {
-    font-family: BM DOHYEON, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     margin: 0;
   }
 
   h4, h5, h6, span, p, :after, :before {
-    font-family: BM JUA, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     margin: 0;
   }
 

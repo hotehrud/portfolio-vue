@@ -1,21 +1,20 @@
 <template>
   <div class="profile-bio">
-    <div class="card-header">
-      <h3>
-        <img :src="imageURL"/>
-        {{ title }}
-      </h3>
-    </div>
-    <div class="card-body">
-      <transition name="fade" mode="out-in">
-        <loading v-if="waiting"/>
-        <div v-else>
+    <card :waiting="waiting">
+      <div slot="header" class="card-header">
+        <h3>
+          <img :src="imageURL"/>
+          {{ title }}
+        </h3>
+      </div>
+
+      <div slot="body" class="bio-body">
+        <div v-if="!waiting">
           <h4>Bio</h4>
           <p v-html="text"/>
         </div>
-        
-      </transition>
-    </div>
+      </div>
+    </card>
   </div>
 </template>
 
@@ -46,7 +45,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  .card-body {
+  .bio-body {
     text-align: left;
     h4 {
       margin: 0 0 .5rem 0;

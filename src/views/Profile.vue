@@ -42,6 +42,7 @@
   </div>
 </template>
 
+
 <script>
 import profileBase from '@/components/profile/profile-base'
 import profileSkill from '@/components/profile/profile-skill'

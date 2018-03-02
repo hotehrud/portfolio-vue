@@ -1,20 +1,20 @@
 <template>
   <div class="profile-info">
-    <div class="card-header">
-      <h3>
-        <img :src="imageURL"/>
-        {{ title }}
-      </h3>
-    </div>
-    <div class="card-body">
-      <loading v-if="waiting"/>
-      <transition-group name="fade" mode="out-in">
+    <card :waiting="waiting">
+      <div slot="header" class="card-header">
+        <h3>
+          <img :src="imageURL"/>
+          {{ title }}
+        </h3>
+      </div>
+
+      <div slot="body">
         <div v-if="!waiting" :key="index" class="column" v-for="(value, key, index) in info">
           <span class="key">{{ propertyInfo(key) }}</span>
           <span class="value">{{ value }}</span>
         </div>
-      </transition-group>
-    </div>
+      </div>
+    </card>
   </div>
 </template>
 

@@ -1,22 +1,22 @@
 <template>
   <div class="profile-tool">
-    <div class="card-header">
-      <h3>
-        <img :src="imageURL"/>
-        {{ title }}
-      </h3>
-    </div>
-    <div class="card-body">
-      <loading v-if="waiting"/>
-      <transition name="fade">
+    <card :waiting="waiting">
+      <div slot="header" class="card-header">
+        <h3>
+          <img :src="imageURL"/>
+          {{ title }}
+        </h3>
+      </div>
+
+      <div slot="body">
         <div v-if="!waiting">
           <p v-html="text"/>
           <li v-for="item in tools">
             {{ item }}
           </li>
         </div>
-      </transition>
-    </div>
+      </div>
+    </card>
   </div>
 </template>
 

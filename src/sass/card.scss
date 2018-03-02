@@ -94,8 +94,6 @@
     padding-left: 0rem;
     padding-right: 0rem;
     @include respond-to($large-desktop) {
-      padding-left: 1rem;
-      padding-right: 1rem;
       flex: 0 0 48%;
     } 
   }

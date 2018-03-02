@@ -1,33 +1,28 @@
 <template>
   <div class="profile-skill">
-    <div class="card-header">
-      <h3>
-        <img :src="imageURL"/>
-        {{ title }}
-      </h3>
-    </div>
-    <div class="card-body">
-      <loading v-if="waiting"/>
-      <transition-group name="fade" mode="out-in">
+    <card :waiting="waiting">
+      <div slot="header" class="card-header">
+        <h3>
+          <img :src="imageURL"/>
+          {{ title }}
+        </h3>
+      </div>
+
+      <div slot="body">
         <progress-bar :key="index" v-if="!waiting" v-for="(item, index) in lang" :target="item.skill_value">
           <div class="progress-value" slot-scope="props">
             <span class="lang">{{ item.skill_name }}</span>
             <span :class="props.text">{{ item.skill_value }} %</span>
           </div>
         </progress-bar>
-      </transition-group>
-    </div>
+      </div>
+    </card>
   </div>
 </template>
 
 <script>
-import progressBar from '@/components/profile/progress-component'
-
 export default {
   name: 'profile-skill',
-  components: {
-    progressBar
-  },
   data () {
     return {
       value: 0,

@@ -1,14 +1,14 @@
 <template>
   <div class="resume-experience">
-    <div class="card-header">
-      <h3>
-        <img :src="imageURL"/>
-        {{ title }}
-      </h3>
-    </div>
-    <div class="card-body">
-      <loading v-if="waiting"/>
-      <transition name="fade">
+    <card :waiting="waiting">
+      <div slot="header" class="card-header">
+        <h3>
+          <img :src="imageURL"/>
+          {{ title }}
+        </h3>
+      </div>
+
+      <div slot="body">
         <ul v-if="!waiting" class="timeline">
           <li v-for="(item, index) in experience">
             <h3 class="title">{{ item.experience_title }}</h3>
@@ -21,8 +21,8 @@
             <p v-html="item.experience_description"/>
           </li>
         </ul>
-      </transition>
-    </div>
+      </div>
+    </card>
   </div>
 </template>
 

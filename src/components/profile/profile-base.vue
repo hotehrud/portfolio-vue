@@ -1,8 +1,7 @@
 <template>
   <div class="profile-base">
-    <div class="card-body">
-      <loading v-if="waiting"/>
-      <transition name="fade">
+    <card :waiting="waiting">
+      <div slot="body">
         <div v-if="!waiting" class="profile">
           <img class="profile-picture" :src="imageURL"/>
           <h4 class="profile-name">{{ name }}</h4>
@@ -17,19 +16,14 @@
             </ul>
           </div>
         </div>
-      </transition>
-    </div>
+      </div>
+    </card>
   </div>
 </template>
 
 <script>
-import snsGroup from '@/components/profile/profile-sns-component'
-
 export default {
   name: 'profile-base',
-  components: {
-    snsGroup
-  },
   props: {
     waiting: {
       type: Boolean

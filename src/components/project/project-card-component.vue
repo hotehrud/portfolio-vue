@@ -104,6 +104,9 @@ export default {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
+        h4 {
+          color: rgba(0, 0, 0, 0.65); 
+        }
       }
       .project-link {
         position: absolute;
