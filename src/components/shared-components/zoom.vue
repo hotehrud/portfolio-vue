@@ -74,8 +74,6 @@ export default {
     align-items: center;
     z-index: 9999;
     @include respond-to($large-desktop) {
-      width: 30%;
-      height: 100%;
       transform: translate(-50%, -50%);
       top: 50%;
       left: 50%;
@@ -89,6 +87,9 @@ export default {
       background-color: #fff;
       border-radius: 5px;
       box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+      @include respond-to($large-desktop) {
+        width: 500px;
+      }
       img {
         padding: 0rem 2rem 2rem 2rem;
         width: 100%;
@@ -101,6 +102,9 @@ export default {
         filter: blur(10px);
       }
       .loaded {
+        // position: absolute;
+        // top: 40px;
+        // left: 0;
         opacity: 1;
       }
       .hide {
