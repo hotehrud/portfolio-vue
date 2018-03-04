@@ -29,6 +29,5 @@ export default new Router({
       name: 'Projects',
       component: Project
     }
-  ],
-  mode: 'history'
+  ]
 })
