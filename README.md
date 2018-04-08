@@ -2,6 +2,41 @@
 ## [Portfolio Site](https://hotehrud.github.io/portfolio-vue)
 > A Vue.js project
 
+<pre>
+ ┬  
+ ├ assets
+ ├ components
+     ┬ 
+     ├ *
+     ├ shard-components
+ ├ js
+ ├ router
+ ├ sass
+ ├ views
+</pre>
+
+<ul>
+  <li>Client
+    <ul>
+      <li>Architecture - single page application</li>
+      <li>Framework - vue.js</li>
+      <li>Layout - flex</li>
+      <li>Style sheet - scss</li>
+    </ul>
+  </li>
+
+  <li>Server
+    <ul>
+      <li>Architecture - restful api</li>
+      <li>Framework - express</li>
+      <li>Provider - amazon</li>
+      <li>DB - mysql</li>
+    </ul>
+  </li>
+</ul>
+
+![alt code flow](docs/images/portfolio.png)
+
 ## Build Setup
 
 ``` bash
