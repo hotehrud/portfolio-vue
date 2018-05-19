@@ -10,7 +10,7 @@
 
       <div slot="body">
         <ul v-if="!waiting" class="timeline">
-          <li v-for="(item, index) in education">
+          <li v-for="(item, index) in education" :key="index">
             <h3 class="title">{{ item.education_title }}</h3>
             <div class="information">
               <span class="location">

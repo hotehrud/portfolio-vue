@@ -24,6 +24,9 @@ export default {
       this.value++
     }, 10)
   },
+  destroyed () {
+    clearInterval(this.timer)
+  },
   computed: {
     percent () {
       return this.target + '%'
