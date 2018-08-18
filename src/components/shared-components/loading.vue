@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "loading",
+  name: 'loading',
   props: {
     spotStyle: {
       default: () => {},
@@ -21,13 +21,13 @@ export default {
       type: Object
     }
   },
-  data() {
+  data () {
     return {
       n: 6,
       isPercent: false
-    };
+    }
   },
-  mounted() {
+  mounted () {
     // this.isPercent = this.$store.getters.showPercent;
   },
   computed: {
@@ -35,7 +35,7 @@ export default {
     //   return this.$store.getters.progress;
     // }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

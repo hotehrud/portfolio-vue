@@ -2,58 +2,58 @@
   <div class="main">
     <div class="row">
       <resume-experience
-        class="row-4 card"
         :waiting="waiting"
         :title="experienceItems.title"
         :image="experienceItems.image"
-        :experience="experienceItems.experience"/>
+        :experience="experienceItems.experience"
+        class="row-4 card"/>
       <resume-education
         :waiting="waiting"
-        class="row-4 card"
         :title="educationItems.title"
         :image="educationItems.image"
-        :education="educationItems.education"/>
+        :education="educationItems.education"
+        class="row-4 card"/>
     </div>
   </div>
 </template>
 
 <script>
-import resumeExperience from '@/components/resume/resume-experience'
-import resumeEducation from '@/components/resume/resume-education'
+import resumeExperience from "@/components/resume/resume-experience";
+import resumeEducation from "@/components/resume/resume-education";
 
 export default {
-  name: 'Resume',
+  name: "Resume",
   components: {
     resumeExperience,
     resumeEducation
   },
-  data () {
+  data() {
     return {
       waiting: true,
       experienceItems: {
-        title: 'Experience',
-        image: 'experience.svg',
+        title: "Experience",
+        image: "experience.svg",
         experience: []
       },
       educationItems: {
-        title: 'Education',
-        image: 'education.svg',
+        title: "Education",
+        image: "education.svg",
         education: []
       }
-    }
+    };
   },
-  created () {
-    this.$http.get('https://mygumi.me:3000/resume/1').then(res => {
-      let datas = res.data
+  created() {
+    this.$http.get("https://mygumi.me:3000/resume/1").then(res => {
+      let datas = res.data;
 
       setTimeout(() => {
-        this.waiting = false
-        this.experienceItems.experience = datas.experiences.reverse()
-        this.educationItems.education = datas.educations.reverse()
-      }, 1500)
-    })
+        this.waiting = false;
+        this.experienceItems.experience = datas.experiences.reverse();
+        this.educationItems.education = datas.educations.reverse();
+      }, 1500);
+    });
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

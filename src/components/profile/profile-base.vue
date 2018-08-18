@@ -9,7 +9,8 @@
           <div class="icon-group">
             <ul>
               <sns-group 
-                v-for="item in sns" 
+                v-for="(item, index) in sns" 
+                :key="index"
                 :name="item.social_name" 
                 :image="item.social_imageURL" 
                 :link="item.social_address" />

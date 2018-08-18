@@ -1,33 +1,33 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Profile from '@/views/Profile'
-import Resume from '@/views/Resume'
-import Achievement from '@/views/Achievement'
-import Project from '@/views/Project'
+import Vue from "vue";
+import Router from "vue-router";
+import Profile from "@/views/Profile";
+import Resume from "@/views/Resume";
+import Achievement from "@/views/Achievement";
+import Project from "@/views/Project";
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'Profile',
+      path: "/",
+      name: "Profile",
       component: Profile
     },
     {
-      path: '/resume',
-      name: 'Resume',
+      path: "/resume",
+      name: "Resume",
       component: Resume
     },
     {
-      path: '/achievement',
-      name: 'Achievement',
+      path: "/achievement",
+      name: "Achievement",
       component: Achievement
     },
     {
-      path: '/project',
-      name: 'Projects',
+      path: "/project",
+      name: "Projects",
       component: Project
     }
   ]
-})
+});

@@ -9,6 +9,7 @@
       <h1>{{ pageName }}</h1>
     </div>
     <div class="fork" @click="pageMove">
+      <span>updated: {{ date }}</span>
       <h4>
         <img :src="forkImage" alt="fork" /> Fork
       </h4>
@@ -18,31 +19,33 @@
 </template>
 
 <script>
-import { EventBus } from "@/js/event-bus.js";
+import { EventBus } from '@/js/event-bus.js'
 
 export default {
-  name: "toolbar",
-  data() {
-    return {};
+  name: 'toolbar',
+  data () {
+    return {
+      date: '2018/1/1'
+    }
   },
   computed: {
-    pageName() {
-      return this.$route.name;
+    pageName () {
+      return this.$route.name
     },
-    forkImage() {
-      return require("@/assets/img/fork.svg");
+    forkImage () {
+      return require('@/assets/img/fork.svg')
     }
   },
   methods: {
-    open(e) {
-      e.stopPropagation();
-      EventBus.$emit("open-sidebar");
+    open (e) {
+      e.stopPropagation()
+      EventBus.$emit('open-sidebar')
     },
-    pageMove() {
-      window.location.href = "https://github.com/hotehrud/portfolio-vue";
+    pageMove () {
+      window.location.href = 'https://github.com/hotehrud/portfolio-vue'
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -89,22 +92,29 @@ export default {
   }
 
   .fork {
-    margin-right: 2rem;
     height: 2.5rem;
     text-align: center;
-    width: 7rem;
-    border-radius: 0.5rem;
-    background-color: #273238;
     color: #fff;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
+    @include respond-to($large-desktop) {
+      margin-right: 2rem;
+    }
+    span {
+      color: rgba(0, 0, 0, 0.75);
+      font-size: 0.75rem;
+      margin-right: 1rem;
+    }
     h4 {
       display: flex;
       align-items: center;
       justify-content: center;
+      border-radius: 0.5rem;
+      background-color: #273238;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
       img {
         margin-right: 0.5rem;
         width: 24px;
