@@ -15,17 +15,11 @@ export default {
     name: {
       type: String
     },
-    image: {
-      type: String
-    },
     link: {
       type: String
     }
   },
   computed: {
-    imageURL() {
-      return require("@/assets/img/" + this.image);
-    },
     tooltipName() {
       return this.name.charAt(0).toUpperCase() + this.name.slice(1);
     },

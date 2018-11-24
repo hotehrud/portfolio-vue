@@ -42,16 +42,17 @@
   </div>
 </template>
 
-
 <script>
-import profileBase from '@/components/profile/profile-base'
-import profileSkill from '@/components/profile/profile-skill'
-import profileBio from '@/components/profile//profile-biography'
-import profileInfo from '@/components/profile/profile-information'
-import profileTool from '@/components/profile/profile-tool'
+import profileBase from "@/components/profile/profile-base";
+import profileSkill from "@/components/profile/profile-skill";
+import profileBio from "@/components/profile//profile-biography";
+import profileInfo from "@/components/profile/profile-information";
+import profileTool from "@/components/profile/profile-tool";
+
+import * as profile from "@/json/profile";
 
 export default {
-  name: 'Profile',
+  name: "Profile",
   components: {
     profileBase,
     profileSkill,
@@ -59,72 +60,67 @@ export default {
     profileInfo,
     profileTool
   },
-  data () {
+  data() {
     return {
       waiting: true,
       baseItems: {
-        name: '',
-        company: '',
-        picture: '',
+        name: "",
+        company: "",
+        picture: "",
         sns: []
       },
       skillItems: {
-        title: 'Skills',
-        image: 'plus-one.svg',
+        title: "Skills",
+        image: "plus-one.svg",
         lang: []
       },
       bioItems: {
-        title: 'Profile',
-        image: 'profile.svg',
-        text: ''
+        title: "Profile",
+        image: "profile.svg",
+        text: ""
       },
       infoItems: {
-        title: 'Information',
-        image: 'info.svg',
+        title: "Information",
+        image: "info.svg",
         info: {
-          name: '',
-          date_of_birth: '',
-          tel: '',
-          email: '',
-          address: ''
+          name: "",
+          date_of_birth: "",
+          tel: "",
+          email: "",
+          address: ""
         }
       },
       toolItems: {
-        title: 'Toolbox',
-        image: 'wrench.svg',
+        title: "Toolbox",
+        image: "wrench.svg",
         tool: []
       }
-    }
+    };
   },
-  created () {
-    this.$http.get('https://mygumi.me:3000/profile/1').then(res => {
-      let datas = res.data
-      let info = datas.informations[0]
-      let toolbox = datas.toolboxes[0]
+  created() {
+    let info = profile.informations;
+    let toolbox = profile.toolboxes;
 
-      setTimeout(() => {
-        this.waiting = false
-        this.baseItems.name = datas.profile_name
-        this.baseItems.company = datas.profile_company
-        this.baseItems.picture = datas.profile_imageURL
-        this.baseItems.sns = datas.socials
-        this.bioItems.text = datas.profile_bio
-        this.skillItems.lang = datas.skills
-        this.infoItems.info.name = info.info_name
-        this.infoItems.info.date_of_birth = info.info_date_of_birth
-        this.infoItems.info.tel = info.info_tel
-        this.infoItems.info.email = info.info_email
-        this.infoItems.info.address = info.info_address
-        this.toolItems.tool = toolbox.toolbox_kind.split(',')
-      }, 1000)
-    })
+    setTimeout(() => {
+      this.waiting = false;
+      this.baseItems.name = profile.profile_name;
+      this.baseItems.company = profile.profile_company;
+      this.baseItems.picture = profile.profile_imageURL;
+      this.baseItems.sns = profile.socials;
+      this.bioItems.text = profile.profile_bio;
+      this.skillItems.lang = profile.skills;
+      this.infoItems.info.name = info.info_name;
+      this.infoItems.info.date_of_birth = info.info_date_of_birth;
+      this.infoItems.info.tel = info.info_tel;
+      this.infoItems.info.email = info.info_email;
+      this.infoItems.info.address = info.info_address;
+      this.toolItems.tool = toolbox.toolbox_kind.split(",");
+    }, 500);
   },
-  methods: {
-  }
-}
+  methods: {}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  
 </style>

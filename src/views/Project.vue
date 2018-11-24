@@ -42,100 +42,99 @@
 </template>
 
 <script>
-import projectCard from '@/components/project/project-card-component'
+import projectCard from "@/components/project/project-card-component";
+
+import * as project from "@/json/project";
 
 export default {
-  name: 'Project',
+  name: "Project",
   components: {
     projectCard
   },
-  data () {
+  data() {
     return {
       waiting: true,
       isZoom: false,
-      zoomImage: '',
+      zoomImage: "",
       projectItems: []
-    }
+    };
   },
-  created () {
-    this.$http.get('https://mygumi.me:3000/project/1').then(res => {
-      let datas = res.data
-
-      setTimeout(() => {
-        this.waiting = false
-        this.projectItems = datas.projects
-      }, 1500)
-    })
+  created() {
+    setTimeout(() => {
+      this.waiting = false;
+      this.projectItems = project.projects;
+    }, 500);
   },
   computed: {
-    leftCards () {
-      let temp = []
-      let len = this.projectItems.length
+    leftCards() {
+      let temp = [];
+      let len = this.projectItems.length;
 
       for (let i = 0; i < len; i += 2) {
-        temp.push(this.projectItems[i])
+        temp.push(this.projectItems[i]);
       }
-      return temp
+      return temp;
     },
-    rightCards () {
-      let temp = []
-      let len = this.projectItems.length
+    rightCards() {
+      let temp = [];
+      let len = this.projectItems.length;
 
       for (let i = 1; i < len; i += 2) {
-        temp.push(this.projectItems[i])
+        temp.push(this.projectItems[i]);
       }
-      return temp
+      return temp;
     }
   },
   methods: {
-    zoom (isZoom, zoomImage) {
-      if (typeof isZoom !== 'undefined') {
-        this.isZoom = isZoom
+    zoom(isZoom, zoomImage) {
+      if (typeof isZoom !== "undefined") {
+        this.isZoom = isZoom;
       }
-      if (typeof zoomImage !== 'undefined') {
-        this.zoomImage = zoomImage
+      if (typeof zoomImage !== "undefined") {
+        this.zoomImage = zoomImage;
       }
     }
   }
-}
+};
 </script>
 
 <style lang="scss">
-  .main {
-    .project-loading {
-      position: absolute;
-      top: 65px;
-      left: 0;
-      width: 100%;
-      display: -webkit-box;
-      display: -moz-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-pack: center;
-      -moz-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -moz-box-align: center;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center;
-      @include respond-to($large-desktop) {
-        width: calc(100% - #{ $sidebar-width });
-        left: $sidebar-width;
-      }
-      height: calc(100% - #{ $header-height });
-      .loading-container {
-        font-size: 1.875rem;
-        span[class*="l-"] {
-          height: 8px; width: 8px;
-        }   
-      }
+.main {
+  .project-loading {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    @include respond-to($large-desktop) {
+      width: calc(100% - #{$sidebar-width});
+      left: $sidebar-width;
     }
-    .project-container {
-      flex-wrap: wrap;
+    height: calc(100% - #{$header-height});
+    .loading-container {
+      font-size: 1.875rem;
+      span[class*="l-"] {
+        height: 8px;
+        width: 8px;
+      }
     }
   }
+  .project-container {
+    flex-wrap: wrap;
+  }
+}
 </style>

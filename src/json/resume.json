@@ -1,0 +1,90 @@
+{
+  "member_seq": 1,
+  "member_uid": "a1b2c3",
+  "createdAt": null,
+  "updatedAt": null,
+  "experiences": [
+    {
+      "experience_seq": 1,
+      "experience_title": "Scratch assistant",
+      "experience_location": "Kunsan university",
+      "experience_date": "Jul, 2014 - Dec, 2014",
+      "experience_description": "I assisted elementary school students with a scratch-based education program to provide fun and interest in software.",
+      "createdAt": null,
+      "updatedAt": null,
+      "member_seq": 1
+    },
+    {
+      "experience_seq": 2,
+      "experience_title": "Web club president",
+      "experience_location": "Kunsan university",
+      "experience_date": "Jan, 2015 - Dec, 2015",
+      "experience_description": "There had been no good perception on web-based techniques in my college. For such a reason, I had not had opportunities for them. So, I myself made a web-based club to share the techniques. As a result that would help students who were a few years behind me participate in contests and improve their skills in school.",
+      "createdAt": null,
+      "updatedAt": null,
+      "member_seq": 1
+    },
+    {
+      "experience_seq": 3,
+      "experience_title": "Start-up club developer",
+      "experience_location": "Kunsan university",
+      "experience_date": "Jan, 2015 - Dec, 2015",
+      "experience_description": "I imagined people using applications which I made. It was inexpressible. With this club on opening business I got to know about starting business. I took on developing web applications. Although my applications could not be launched, the experience of many contests and educations came to me as an opportunity to grow.",
+      "createdAt": null,
+      "updatedAt": null,
+      "member_seq": 1
+    },
+    {
+      "experience_seq": 4,
+      "experience_title": "Web developer",
+      "experience_location": "Cizion",
+      "experience_date": "Jan, 2016 - Aug, 2016",
+      "experience_description": "Cizion is a company which offers commenting services based on social networks. As a similar company, Disqus can come to our mind. I was in charge of supporting clients for developing. Other than that, I performed projects on open-API-based programs and KPIs",
+      "createdAt": null,
+      "updatedAt": null,
+      "member_seq": 1
+    },
+    {
+      "experience_seq": 5,
+      "experience_title": "Web developer",
+      "experience_location": "Dharma Soft",
+      "experience_date": "Nov, 2016 - Jan, 2017",
+      "experience_description": "Darmasoft is a company which makes websites. I mainly created and maintained websites. Other than that, I worked to improve website performance and to build environment for collaboration such as a development server and source management.",
+      "createdAt": null,
+      "updatedAt": null,
+      "member_seq": 1
+    },
+    {
+      "experience_seq": 6,
+      "experience_title": "Software developer",
+      "experience_location": "Vtouch",
+      "experience_date": "May, 2017 -",
+      "experience_description": "Vtouch is a company which offers virtual touch solutions. I mainly made desktop computer applications for home IOT and digital signages. Other than that, I am working on modularization and the company system.",
+      "createdAt": null,
+      "updatedAt": null,
+      "member_seq": 1
+    }
+  ],
+  "educations": [
+    {
+      "education_seq": 1,
+      "education_title": "Indong High School",
+      "education_location": "Gumi",
+      "education_date": "May, 2008 - Feb, 2011",
+      "education_description": "I liked math, so I had completed natural sciences. <br/><br/> I liked playing and games, so I used to receive awards from starcraft and singing contest. I spent my high school days as normal.",
+      "createdAt": null,
+      "updatedAt": null,
+      "member_seq": 1
+    },
+    {
+      "education_seq": 2,
+      "education_title": "Kunsan University",
+      "education_location": "Kunsan",
+      "education_date": "May, 2011 - Feb, 2017",
+      "education_description": "I was going to went back to school to the sophomore after discharged from military service. while doing so, I was decided to transfer to computer engineering. I started lit later than others, so I have strived to improve competence. When i was in senior, I got a job, so I could have worked faster than others.",
+      "createdAt": null,
+      "updatedAt": null,
+      "member_seq": 1
+    }
+  ]
+}

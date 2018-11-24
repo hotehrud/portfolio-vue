@@ -1,0 +1,112 @@
+{
+  "member_seq": 1,
+  "member_uid": "a1b2c3",
+  "createdAt": null,
+  "updatedAt": null,
+  "projects": [
+    {
+      "project_seq": 1,
+      "project_title": "Youtube Application",
+      "project_subtitle": "desktop application",
+      "project_image": "youtube.png",
+      "project_link": "",
+      "project_detail": "youtube_detail.png",
+      "project_description": "It is a desktop application that watch contents of youtube. It was developed using the api was provided by youtube.",
+      "project_skill": "vue.js, electron, sqlite",
+      "createdAt": null,
+      "updatedAt": null,
+      "member_seq": 1
+    },
+    {
+      "project_seq": 2,
+      "project_title": "KPI",
+      "project_subtitle": "for key performance indicators collection",
+      "project_image": "kpi.png",
+      "project_link": "",
+      "project_detail": "",
+      "project_description": "we needed to measure performance for new features. To deal with a lot of data, I first stored it in redis and then stored it in db through cron.",
+      "project_skill": "jquery, node.js, java, redis, mysql",
+      "createdAt": null,
+      "updatedAt": null,
+      "member_seq": 1
+    },
+    {
+      "project_seq": 3,
+      "project_title": "Giftcon Application",
+      "project_subtitle": "for giftcon exchange",
+      "project_image": "giftcon.png",
+      "project_link": "",
+      "project_detail": "giftcon_detail.png",
+      "project_description": "Mobile coupons are wasting a lot of money. Because it disappears after the expiration date. I thought it would be nice if there was space to safely buy and sell mobile coupons. <br/><br/> I used information on sns accounts, mobile devices, and cybercrime inquiries for safety.",
+      "project_skill": "html, css, js, php, mysql",
+      "createdAt": null,
+      "updatedAt": null,
+      "member_seq": 1
+    },
+    {
+      "project_seq": 4,
+      "project_title": "Naver Shopping",
+      "project_subtitle": "for db-url of naver connection",
+      "project_image": "naver.png",
+      "project_link": "https://github.com/hotehrud/navershopping",
+      "project_detail": "",
+      "project_description": "In order to expose products to Naver shopping, it needs to connect db-url. So I created admin page to manage it.",
+      "project_skill": "html, css, js, php, mysql",
+      "createdAt": null,
+      "updatedAt": null,
+      "member_seq": 1
+    },
+    {
+      "project_seq": 5,
+      "project_title": "University Carte Application",
+      "project_subtitle": "for carte",
+      "project_image": "school.png",
+      "project_link": "",
+      "project_detail": "carte_detail.png",
+      "project_description": "The menu of the dormitory restaurant was shown on the website, but there were many inconveniences. I thought it would be useful if there was something I could check as soon as I turned on the phone like a calendar. <br/><br/> I did not have access to the menu database, so I got a data through the web crawl. After that, the menu of dormitory was shown through webview and android widget function.",
+      "project_skill": "cordova, python, mysql",
+      "createdAt": null,
+      "updatedAt": null,
+      "member_seq": 1
+    },
+    {
+      "project_seq": 6,
+      "project_title": "Calendar",
+      "project_subtitle": "for schedule management",
+      "project_image": "calendar.png",
+      "project_link": "",
+      "project_detail": "",
+      "project_description": "promotion date of company was registered automaticly to user. Because of that, participation rate was increased. Google and Naver provide related api.",
+      "project_skill": "html, css, js, java, mysql",
+      "createdAt": null,
+      "updatedAt": null,
+      "member_seq": 1
+    },
+    {
+      "project_seq": 7,
+      "project_title": "Search Application",
+      "project_subtitle": "for trustworthy content",
+      "project_image": "search.png",
+      "project_link": "https://github.com/hotehrud/router_mvc",
+      "project_detail": "",
+      "project_description": "It is difficult to know if the content on the web is trustworthy. So I wanted to make a fair space for trustworthy content. <br/><br/> It was developed using the data was provided by search engine through the open API or crawling.",
+      "project_skill": "node.js, spooky.js, redis, mysql",
+      "createdAt": null,
+      "updatedAt": null,
+      "member_seq": 1
+    },
+    {
+      "project_seq": 8,
+      "project_title": "Posting",
+      "project_subtitle": "for daum service",
+      "project_image": "daum.png",
+      "project_link": "",
+      "project_detail": "",
+      "project_description": "Related posting api was not existed in daum. Daum had updated by my request, so I was able to add related daum service.",
+      "project_skill": "html, css, js, java, mysql",
+      "createdAt": null,
+      "updatedAt": null,
+      "member_seq": 1
+    }
+  ]
+}

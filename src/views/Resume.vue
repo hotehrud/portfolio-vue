@@ -21,6 +21,8 @@
 import resumeExperience from "@/components/resume/resume-experience";
 import resumeEducation from "@/components/resume/resume-education";
 
+import * as resume from "@/json/resume";
+
 export default {
   name: "Resume",
   components: {
@@ -43,15 +45,11 @@ export default {
     };
   },
   created() {
-    this.$http.get("https://mygumi.me:3000/resume/1").then(res => {
-      let datas = res.data;
-
-      setTimeout(() => {
-        this.waiting = false;
-        this.experienceItems.experience = datas.experiences.reverse();
-        this.educationItems.education = datas.educations.reverse();
-      }, 1500);
-    });
+    setTimeout(() => {
+      this.waiting = false;
+      this.experienceItems.experience = resume.experiences.reverse();
+      this.educationItems.education = resume.educations.reverse();
+    }, 500);
   }
 };
 </script>

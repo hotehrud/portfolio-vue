@@ -18,42 +18,40 @@
 </template>
 
 <script>
-import achievementAward from '@/components/achievement/achievement-award'
-import achievementCert from '@/components/achievement/achievement-cert'
+import achievementAward from "@/components/achievement/achievement-award";
+import achievementCert from "@/components/achievement/achievement-cert";
+
+import * as achievement from "@/json/achievement";
 
 export default {
-  name: 'Achievement',
+  name: "Achievement",
   components: {
     achievementAward,
     achievementCert
   },
-  data () {
+  data() {
     return {
       waiting: true,
       awardItems: {
-        title: 'Award',
-        image: 'award.svg',
+        title: "Award",
+        image: "award.svg",
         award: []
       },
       certItems: {
-        title: 'Certification',
-        image: 'cert.svg',
+        title: "Certification",
+        image: "cert.svg",
         cert: []
       }
-    }
+    };
   },
-  created () {
-    this.$http.get('https://mygumi.me:3000/achievement/1').then(res => {
-      let datas = res.data
-
-      setTimeout(() => {
-        this.waiting = false
-        this.awardItems.award = datas.awards
-        this.certItems.cert = datas.certifications
-      }, 1500)
-    })
+  created() {
+    setTimeout(() => {
+      this.waiting = false;
+      this.awardItems.award = achievement.awards;
+      this.certItems.cert = achievement.certifications;
+    }, 500);
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

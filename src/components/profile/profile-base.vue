@@ -11,8 +11,7 @@
               <sns-group 
                 v-for="(item, index) in sns" 
                 :key="index"
-                :name="item.social_name" 
-                :image="item.social_imageURL" 
+                :name="item.social_name"
                 :link="item.social_address" />
             </ul>
           </div>
