@@ -2,15 +2,15 @@
   "profile_seq": 1,
   "profile_name": "Lee Jung Hyun",
   "profile_company": "Software Developer at Vtouch",
-  "profile_imageURL": "me.jpeg",
-  "profile_bio": "I like coding every single day. If I don’t do it, I feel unstable. I am growing firmly though it is late. <br/><br/> I like information sharing, so I have started technology-blog. I thought that speaking ability is writing ability. I am posting steadily on my blog for 2 year. <br/><br/> I would want to improve my logical thinking. So, I started to solve algorithm problems. Since that helps me in many ways, I have been solving algorithms with the achievements. <br/><br/> Now, I am developing more toward the front-end, because I have a tendency for planning and design. But I also like back-end, so I am using Node.js. I have decided to use Vue.js as framework.",
+  "profile_imageURL": "me.jpg",
+  "profile_bio": "I like coding, so do it every day.<br/>If I don’t do it, I feel like doing nothing for whole day.<br/>So I have to do it every single day, I usually do go to cafe during my break time like weekends or holiday.<br/>If someone takes it serious or strange, “Don’t get me wrong.” I’m pretty good. I’m satisfied with my life. l love it.<br/><br/>I would really love to share the information to someone who is interested in IT.<br/>So as a first step for it, I decided to start on my blog.<br/>I’d really happy if somebody get some information through the blog.<br/>So I’m posting some data steadily on it for sharing.<br/><br/>I’ve been focusing too much on programming, so sometimes I spend a lot of time for it.<br/>Technically, For some people, it seems like wasteful.<br/>Even if it is slow and unnecessary practically, I’m just thinking that I’m doing right.<br/>By doing this, I’m improving steadily my tech.<br/><br/>Now, I’m developing more toward a front-end, because I have a tendency for planning and design.<br/>As a front-end, I use vanilla-javascript for a project and I have decided to use vue.js as framework.<br/><br/>In addition to it, I would really love to talk to foreigners so I have been studying English for 30 minutes a day.",
   "createdAt": null,
   "updatedAt": null,
   "member_seq": 1,
   "skills": [
     {
       "skill_seq": 1,
-      "skill_name": "HTML/CSS",
+      "skill_name": "HTML/CSS(SCSS)",
       "skill_value": 90,
       "createdAt": null,
       "updatedAt": null,
@@ -18,7 +18,7 @@
     },
     {
       "skill_seq": 2,
-      "skill_name": "JS(Vue/Node.js)",
+      "skill_name": "Vanilla JS",
       "skill_value": 80,
       "createdAt": null,
       "updatedAt": null,
@@ -26,16 +26,16 @@
     },
     {
       "skill_seq": 3,
-      "skill_name": "JAVA",
-      "skill_value": 60,
+      "skill_name": "Vue.js",
+      "skill_value": 80,
       "createdAt": null,
       "updatedAt": null,
       "profile_seq": 1
     },
     {
       "skill_seq": 4,
-      "skill_name": "PHP",
-      "skill_value": 50,
+      "skill_name": "Node.js",
+      "skill_value": 60,
       "createdAt": null,
       "updatedAt": null,
       "profile_seq": 1

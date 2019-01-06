@@ -12,21 +12,13 @@
 
 <script>
 export default {
-  name: 'card',
-  components: {
-  },
-  data () {
-    return {
-    }
-  },
+  name: "card",
   props: {
     waiting: {
       type: Boolean
     }
-  },
-  computed: {
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

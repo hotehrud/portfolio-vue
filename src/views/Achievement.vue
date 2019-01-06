@@ -2,13 +2,13 @@
   <div class="main">
     <div class="row">
       <achievement-award
-        class="row-4 card"
+        class="row-4"
         :waiting="waiting"
         :title="awardItems.title"
         :image="awardItems.image"
         :award="awardItems.award"/>
       <achievement-cert
-        class="row-4 card"
+        class="row-4"
         :waiting="waiting"
         :title="certItems.title"
         :image="certItems.image"

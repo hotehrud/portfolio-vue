@@ -50,5 +50,8 @@ export default {
     h4 {
       margin: 0 0 .5rem 0;
     }
+    p {
+      font-size: 0.875rem;
+    }
   }
 </style>

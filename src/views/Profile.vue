@@ -3,14 +3,12 @@
     <div class="row">
       <div class="row-1">
         <profile-base
-          class="card" 
           :waiting="waiting"
           :name="baseItems.name"
           :company="baseItems.company"
           :picture="baseItems.picture"
           :sns="baseItems.sns"/>
         <profile-skill 
-          class="card" 
           :waiting="waiting"
           :image="skillItems.image"
           :title="skillItems.title"
@@ -18,20 +16,19 @@
       </div>
       <div class="row-2">
         <profile-bio 
-          class="card" 
           :waiting="waiting"
           :image="bioItems.image"
           :title="bioItems.title"
           :text="bioItems.text"/>
         <div class="row">
           <profile-info 
-            class="row-4 card"
+            class="row-4"
             :waiting="waiting"
             :image="infoItems.image"
             :title="infoItems.title"
             :info="infoItems.info"/>
           <profile-tool 
-            class="row-4 card"
+            class="row-4"
             :waiting="waiting"
             :image="toolItems.image"
             :title="toolItems.title"

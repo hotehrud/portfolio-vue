@@ -9,7 +9,7 @@
       "experience_title": "Scratch assistant",
       "experience_location": "Kunsan university",
       "experience_date": "Jul, 2014 - Dec, 2014",
-      "experience_description": "I assisted elementary school students with a scratch-based education program to provide fun and interest in software.",
+      "experience_description": "I assisted a teacher in charge of teaching elementary school students based on scratch-program to provide fun and interest in software.",
       "createdAt": null,
       "updatedAt": null,
       "member_seq": 1
@@ -19,7 +19,7 @@
       "experience_title": "Web club president",
       "experience_location": "Kunsan university",
       "experience_date": "Jan, 2015 - Dec, 2015",
-      "experience_description": "There had been no good perception on web-based techniques in my college. For such a reason, I had not had opportunities for them. So, I myself made a web-based club to share the techniques. As a result that would help students who were a few years behind me participate in contests and improve their skills in school.",
+      "experience_description": "There had been no good perception based on web-techniques in my college. For such a reason, I have no change to learn them. So, I made a club for it. Finally, I could help students who would like to learn about web.",
       "createdAt": null,
       "updatedAt": null,
       "member_seq": 1
@@ -29,7 +29,7 @@
       "experience_title": "Start-up club developer",
       "experience_location": "Kunsan university",
       "experience_date": "Jan, 2015 - Dec, 2015",
-      "experience_description": "I imagined people using applications which I made. It was inexpressible. With this club on opening business I got to know about starting business. I took on developing web applications. Although my applications could not be launched, the experience of many contests and educations came to me as an opportunity to grow.",
+      "experience_description": "I sometimes have been picturing someone use applications which I created. It was too good to be expressed. With this club on opening business, I could know about starting business. I was in charge of developing web applications. Although it could not be launched, the experience of many contests and educations came to me as an opportunity to grow.",
       "createdAt": null,
       "updatedAt": null,
       "member_seq": 1
@@ -39,7 +39,7 @@
       "experience_title": "Web developer",
       "experience_location": "Cizion",
       "experience_date": "Jan, 2016 - Aug, 2016",
-      "experience_description": "Cizion is a company which offers commenting services based on social networks. As a similar company, Disqus can come to our mind. I was in charge of supporting clients for developing. Other than that, I performed projects on open-API-based programs and KPIs",
+      "experience_description": "Cizion is a company which offers commenting services based on social networks. As a similar company, reminds us of “Disqus”. I was in charge of development and support for clients. Other than that, I performed projects based on openAPI and like KPIs.",
       "createdAt": null,
       "updatedAt": null,
       "member_seq": 1
@@ -59,7 +59,7 @@
       "experience_title": "Software developer",
       "experience_location": "Vtouch",
       "experience_date": "May, 2017 -",
-      "experience_description": "Vtouch is a company which offers virtual touch solutions. I mainly made desktop computer applications for home IOT and digital signages. Other than that, I am working on modularization and the company system.",
+      "experience_description": "Vtouch is a company which offers virtual touch solutions. I mainly create applications for home and a car and Digital signage. Other than that, I’m working on modularization and the company system.",
       "createdAt": null,
       "updatedAt": null,
       "member_seq": 1
@@ -78,10 +78,10 @@
     },
     {
       "education_seq": 2,
-      "education_title": "Kunsan University",
+      "education_title": "Kunsan University - Computer Science",
       "education_location": "Kunsan",
       "education_date": "May, 2011 - Feb, 2017",
-      "education_description": "I was going to went back to school to the sophomore after discharged from military service. while doing so, I was decided to transfer to computer engineering. I started lit later than others, so I have strived to improve competence. When i was in senior, I got a job, so I could have worked faster than others.",
+      "education_description": "I was going to went back to school to the sophomore after I get discharged from military service. Meanwhile I was decided to transfer to computer sciences from oceanography. I thought I got a late start than others, so I always have strived to improve competence. Finally, when I was in senior, I got a job, so I could have worked faster than others.",
       "createdAt": null,
       "updatedAt": null,
       "member_seq": 1

@@ -1,9 +1,7 @@
 <template>
   <div class="toolbar">
     <button class="menu cursor" @click="open">
-      <svg viewBox="0 0 24 24">
-        <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path>
-      </svg>
+      <v-icon name="bars"/>
     </button>
     <div class="page-title">
       <h1>{{ pageName }}</h1>
@@ -11,41 +9,40 @@
     <div class="fork" @click="pageMove">
       <span>updated: {{ date }}</span>
       <h4>
-        <img :src="forkImage" alt="fork" /> Fork
+        <img :src="forkImage" alt="fork"> Fork
       </h4>
     </div>
-
   </div>
 </template>
 
 <script>
-import { EventBus } from '@/js/event-bus.js'
+import { EventBus } from "@/js/event-bus.js";
 
 export default {
-  name: 'toolbar',
-  data () {
+  name: "toolbar",
+  data() {
     return {
-      date: '2018/1/1'
-    }
+      date: "2018/1/1"
+    };
   },
   computed: {
-    pageName () {
-      return this.$route.name
+    pageName() {
+      return this.$route.name;
     },
-    forkImage () {
-      return require('@/assets/img/fork.svg')
+    forkImage() {
+      return require("@/assets/img/fork.svg");
     }
   },
   methods: {
-    open (e) {
-      e.stopPropagation()
-      EventBus.$emit('open-sidebar')
+    open(e) {
+      e.stopPropagation();
+      EventBus.$emit("open-sidebar");
     },
-    pageMove () {
-      window.location.href = 'https://github.com/hotehrud/portfolio-vue'
+    pageMove() {
+      window.location.href = "https://github.com/hotehrud/portfolio-vue";
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -92,20 +89,20 @@ export default {
   }
 
   .fork {
-    height: 2.5rem;
+    height: 100%;
     text-align: center;
     color: #fff;
     font-weight: bold;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
     @include respond-to($large-desktop) {
       margin-right: 2rem;
     }
     span {
       color: rgba(0, 0, 0, 0.75);
       font-size: 0.75rem;
-      margin-right: 1rem;
     }
     h4 {
       display: flex;
@@ -114,6 +111,7 @@ export default {
       border-radius: 0.5rem;
       background-color: #273238;
       padding: 0.5rem 1rem;
+      margin-left: 1rem;
       cursor: pointer;
       img {
         margin-right: 0.5rem;

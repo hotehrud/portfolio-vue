@@ -4,6 +4,7 @@ import Profile from "@/views/Profile";
 import Resume from "@/views/Resume";
 import Achievement from "@/views/Achievement";
 import Project from "@/views/Project";
+import Activity from "@/views/Activity";
 
 Vue.use(Router);
 
@@ -28,6 +29,11 @@ export default new Router({
       path: "/project",
       name: "Projects",
       component: Project
+    },
+    {
+      path: "/activity",
+      name: "Activities",
+      component: Activity
     }
   ]
 });

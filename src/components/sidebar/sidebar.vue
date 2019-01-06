@@ -29,7 +29,7 @@
 import { EventBus } from '@/js/event-bus.js'
 import menuList from '@/components/sidebar/sidebar-list'
 import logo from '@/assets/img/logo.png'
-import me from '@/assets/img/me.jpeg'
+import me from '@/assets/img/me.jpg'
 
 export default {
   name: 'Sidebar',

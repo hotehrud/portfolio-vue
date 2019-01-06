@@ -1,27 +1,21 @@
 <template>
   <div id="app">
-    <div 
-      class="container"
-      @click="toggleShow">
-
+    <div class="container" @click="toggleShow">
       <sidebar ref="sidebar"></sidebar>
-        
+
       <div class="layout">
         <div slot="header" class="header">
           <toolbar></toolbar>
         </div>
 
         <div slot="body" class="body">
-          <transition appear
-            name="slide-fade"
-            mode="out-in">>
+          <transition appear name="slide-fade" mode="out-in">>
             <router-view/>
           </transition>
         </div>
-      </div>  
-      
+      </div>
     </div>
-    <svg-collection v-show="false" />
+    <svg-collection v-show="false"/>
   </div>
 </template>
 
@@ -152,12 +146,18 @@ p {
   @include respond-to($large-desktop) {
     padding-left: $sidebar-width;
   }
+  .card-container {
+    background-color: #fff;
+  }
 }
 
 svg {
   top: auto;
   width: 1.5rem;
   height: 1.5rem;
+  &:hover {
+    fill: blue;
+  }
 }
 
 ul {
@@ -180,6 +180,29 @@ a {
 .score {
   font-size: 0.75rem;
   text-align: right;
+}
+
+.center-loading {
+  position: fixed;
+  top: 65px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - #{$header-height});
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  @include respond-to($large-desktop) {
+    width: calc(100% - #{$sidebar-width});
+    left: $sidebar-width;
+  }
+  .loading-container {
+    font-size: 1.875rem;
+    span[class*="l-"] {
+      height: 8px;
+      width: 8px;
+    }
+  }
 }
 
 .slide-fade-enter-active {

@@ -1,8 +1,8 @@
 <template>
-  <div class="loading-container">
+  <div :style="textStyle" class="loading-container">
     <span>Loading</span>
     <div class="loading">
-      <span v-for="(spot, index) in n" :key="index" :class="'l-' + index" :style="spotStyle" />
+      <span v-for="(spot, index) in n" :key="index" :class="'l-' + index" :style="spotStyle"/>
     </div>
     <span v-if="isPercent" class="percent">{{ percent }} %</span>
   </div>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'loading',
+  name: "loading",
   props: {
     spotStyle: {
       default: () => {},
@@ -21,21 +21,13 @@ export default {
       type: Object
     }
   },
-  data () {
+  data() {
     return {
       n: 6,
       isPercent: false
-    }
-  },
-  mounted () {
-    // this.isPercent = this.$store.getters.showPercent;
-  },
-  computed: {
-    // percent() {
-    //   return this.$store.getters.progress;
-    // }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
