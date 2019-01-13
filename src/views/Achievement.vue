@@ -21,7 +21,7 @@
 import achievementAward from "@/components/achievement/achievement-award";
 import achievementCert from "@/components/achievement/achievement-cert";
 
-import * as achievement from "@/json/achievement";
+import * as achievement from "../../docs/json/achievement";
 
 export default {
   name: "Achievement",

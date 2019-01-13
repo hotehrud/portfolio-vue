@@ -20,7 +20,7 @@
 
 <script>
 import activityCard from "@/components/activity/activity-card";
-import * as activity from "@/json/activity";
+import * as activity from "../../docs/json/activity";
 
 export default {
   name: "Activity",

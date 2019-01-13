@@ -59,7 +59,7 @@
 import projectCard from "@/components/project/project-card-component";
 import videoView from "@/components/shared-components/video";
 
-import * as project from "@/json/project";
+import * as project from "../../docs/json/project";
 
 export default {
   name: "Project",

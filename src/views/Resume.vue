@@ -21,7 +21,7 @@
 import resumeExperience from "@/components/resume/resume-experience";
 import resumeEducation from "@/components/resume/resume-education";
 
-import * as resume from "@/json/resume";
+import * as resume from "../../docs/json/resume";
 
 export default {
   name: "Resume",

@@ -46,7 +46,7 @@ import profileBio from "@/components/profile//profile-biography";
 import profileInfo from "@/components/profile/profile-information";
 import profileTool from "@/components/profile/profile-tool";
 
-import * as profile from "@/json/profile";
+import * as profile from "../../docs/json/profile";
 
 export default {
   name: "Profile",
