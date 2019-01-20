@@ -47,8 +47,8 @@ export default {
   created() {
     setTimeout(() => {
       this.waiting = false;
-      this.experienceItems.experience = resume.experiences.reverse();
-      this.educationItems.education = resume.educations.reverse();
+      this.experienceItems.experience = resume.experiences;
+      this.educationItems.education = resume.educations;
     }, 500);
   }
 };
