@@ -1,17 +1,24 @@
 {
   "profile_seq": 1,
   "profile_name": "Lee Jung Hyun",
-  "profile_company": "Software Developer at Vtouch",
+  "profile_company": "Front-end Engineer",
   "profile_imageURL": "me.jpg",
   "profile_bio": "I like coding, so I do it every day.<br/>If I don’t do it, I feel like I've done nothing for the whole day.<br/>I usually go to cafe to work whenever I have free time, such as on the weekends or when I'm on holiday.<br/>Some people think that's strange or bizarre, but, don't get me wrong, I enjoy it!<br/><br/>I would really love to share the information with someone interested in IT.<br/>So as a first step for it, I decided to start my own blog.<br/>I’d be really happy if someone could get some information through the blog.<br/>So I’m posting data on it steadily to share with others.<br/><br/>Sometimes, I feel like I focus too much on programming.<br/>For some people, it seem like a waste of time.<br/>I’ve been focusing too much on programming, so sometimes I spend a lot of time for it.<br/>Technically, For some people, it seems like wasteful.<br/>Even through it is slow and unnecessary practically, I’m just thinking that I’m doing right.<br/>Through these steps, I’m steadily improving my technological skills.<br/><br/>Now, I’m developing more toward a front-end, because I have an aptitude for planning and design.<br/>As a front-end, I use vanilla-javascript for a project and I have decided to use vue.js as framework.<br/><br/>In addition to it, I would really love to talk to foreigners so I have been studying English for 30 minutes a day.",
   "createdAt": null,
   "updatedAt": null,
   "member_seq": 1,
   "skills": [
+    "Experience in building front-end with React, Redux, Vue.js, Vuex.",
+    "Experience in working with AWS cloud infrastructure development.",
+    "Experience in launching new products that require planning, design and development.",
+    "Experience in building back-end with Node.js, Java and PHP, and data store (RDBMS – MySQL, NoSQL – Redis)",
+    "Always thinking of improving efficiency of development teams."
+  ],
+  "skill_langages": [
     {
       "skill_seq": 1,
       "skill_name": "HTML/CSS(SCSS)",
-      "skill_value": 90,
+      "skill_value": 80,
       "createdAt": null,
       "updatedAt": null,
       "profile_seq": 1
@@ -19,6 +26,14 @@
     {
       "skill_seq": 2,
       "skill_name": "Vanilla JS",
+      "skill_value": 80,
+      "createdAt": null,
+      "updatedAt": null,
+      "profile_seq": 1
+    },
+    {
+      "skill_seq": 3,
+      "skill_name": "React.js",
       "skill_value": 80,
       "createdAt": null,
       "updatedAt": null,
@@ -101,7 +116,7 @@
   },
   "toolboxes": {
     "toolbox_seq": 1,
-    "toolbox_kind": "linux,git,webpack,electron,redis,mysql,es6",
+    "toolbox_kind": "storybook,cypress,styled-components,es6,aws,git",
     "createdAt": null,
     "updatedAt": null,
     "profile_seq": 1

@@ -7,32 +7,38 @@
           :name="baseItems.name"
           :company="baseItems.company"
           :picture="baseItems.picture"
-          :sns="baseItems.sns"/>
-        <profile-skill 
+          :sns="baseItems.sns"
+        />
+        <profile-skill
           :waiting="waiting"
           :image="skillItems.image"
           :title="skillItems.title"
-          :lang="skillItems.lang"/>
+          :skills="skillItems.skills"
+          :langages="skillItems.langages"
+        />
       </div>
       <div class="row-2">
-        <profile-bio 
+        <profile-bio
           :waiting="waiting"
           :image="bioItems.image"
           :title="bioItems.title"
-          :text="bioItems.text"/>
+          :text="bioItems.text"
+        />
         <div class="row">
-          <profile-info 
+          <profile-info
             class="row-4"
             :waiting="waiting"
             :image="infoItems.image"
             :title="infoItems.title"
-            :info="infoItems.info"/>
-          <profile-tool 
+            :info="infoItems.info"
+          />
+          <profile-tool
             class="row-4"
             :waiting="waiting"
             :image="toolItems.image"
             :title="toolItems.title"
-            :tools="toolItems.tool"/>
+            :tools="toolItems.tool"
+          />
         </div>
       </div>
     </div>
@@ -105,7 +111,8 @@ export default {
       this.baseItems.picture = profile.profile_imageURL;
       this.baseItems.sns = profile.socials;
       this.bioItems.text = profile.profile_bio;
-      this.skillItems.lang = profile.skills;
+      this.skillItems.skills = profile.skills;
+      this.skillItems.langages = profile.skill_langages;
       this.infoItems.info.name = info.info_name;
       this.infoItems.info.date_of_birth = info.info_date_of_birth;
       this.infoItems.info.tel = info.info_tel;

@@ -9,13 +9,14 @@
         </div>
 
         <div slot="body" class="body">
-          <transition appear name="slide-fade" mode="out-in">>
-            <router-view/>
+          <transition appear name="slide-fade" mode="out-in">
+            >
+            <router-view />
           </transition>
         </div>
       </div>
     </div>
-    <svg-collection v-show="false"/>
+    <svg-collection v-show="false" />
   </div>
 </template>
 
